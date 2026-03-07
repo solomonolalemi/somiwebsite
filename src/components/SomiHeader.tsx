@@ -14,14 +14,15 @@ const SomiHeader = () => {
   const [mobileOpen, setMobileOpen] = useState(false);
 
   return (
-    <header className="fixed top-0 left-0 right-0 z-50 bg-somi-navy/95 backdrop-blur-md border-b border-somi-navy-light/50">
+    <header className="fixed top-0 left-0 right-0 z-50 bg-background/80 backdrop-blur-lg border-b border-border">
       <div className="container mx-auto flex items-center justify-between py-3 px-4 lg:px-8">
         <a href="#" className="flex items-center gap-2">
           <img
             src={somiLogo}
             alt="Saving Our Men Initiative logo"
-            className="h-10 w-auto"
+            className="h-8 w-auto"
           />
+          <span className="font-semibold text-lg text-foreground tracking-tight">SOMI</span>
         </a>
 
         <nav className="hidden lg:flex items-center gap-8">
@@ -29,45 +30,45 @@ const SomiHeader = () => {
             <a
               key={link.label}
               href={link.href}
-              className="text-sm font-medium text-somi-warm/80 hover:text-somi-gold transition-colors duration-200"
+              className="text-sm font-medium text-muted-foreground hover:text-foreground transition-colors duration-200"
             >
               {link.label}
             </a>
           ))}
         </nav>
 
-        <div className="flex items-center gap-4">
+        <div className="flex items-center gap-3">
           <a
             href="#action"
-            className="somi-btn-gold text-sm py-2 px-6 animate-pulse-glow hidden sm:inline-block"
+            className="somi-btn-gold text-sm py-2.5 px-5 hidden sm:inline-block"
           >
             Donate Now
           </a>
           <button
             onClick={() => setMobileOpen(!mobileOpen)}
-            className="lg:hidden text-somi-warm/80"
+            className="lg:hidden text-foreground"
             aria-label="Toggle menu"
           >
-            {mobileOpen ? <X size={24} /> : <Menu size={24} />}
+            {mobileOpen ? <X size={22} /> : <Menu size={22} />}
           </button>
         </div>
       </div>
 
       {mobileOpen && (
-        <div className="lg:hidden bg-somi-navy border-t border-somi-navy-light/30 px-4 pb-4">
+        <div className="lg:hidden bg-background border-t border-border px-4 pb-4">
           {navLinks.map((link) => (
             <a
               key={link.label}
               href={link.href}
               onClick={() => setMobileOpen(false)}
-              className="block py-3 text-sm font-medium text-somi-warm/80 hover:text-somi-gold transition-colors border-b border-somi-navy-light/20"
+              className="block py-3 text-sm font-medium text-muted-foreground hover:text-foreground transition-colors border-b border-border"
             >
               {link.label}
             </a>
           ))}
           <a
             href="#action"
-            className="somi-btn-gold text-sm py-2 px-6 mt-4 inline-block"
+            className="somi-btn-gold text-sm py-2.5 px-5 mt-4 inline-block"
           >
             Donate Now
           </a>

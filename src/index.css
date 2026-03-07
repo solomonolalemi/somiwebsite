@@ -4,53 +4,53 @@
 
 @layer base {
   :root {
-    --background: 220 20% 97%;
-    --foreground: 220 30% 10%;
+    --background: 0 0% 100%;
+    --foreground: 220 20% 14%;
 
     --card: 0 0% 100%;
-    --card-foreground: 220 30% 10%;
+    --card-foreground: 220 20% 14%;
 
     --popover: 0 0% 100%;
-    --popover-foreground: 220 30% 10%;
+    --popover-foreground: 220 20% 14%;
 
-    --primary: 210 80% 45%;
+    --primary: 160 50% 38%;
     --primary-foreground: 0 0% 100%;
 
-    --secondary: 38 90% 55%;
-    --secondary-foreground: 220 30% 10%;
+    --secondary: 220 14% 96%;
+    --secondary-foreground: 220 20% 14%;
 
-    --muted: 220 15% 92%;
-    --muted-foreground: 220 10% 45%;
+    --muted: 220 14% 96%;
+    --muted-foreground: 220 10% 46%;
 
-    --accent: 38 90% 55%;
-    --accent-foreground: 220 30% 10%;
+    --accent: 160 50% 38%;
+    --accent-foreground: 0 0% 100%;
 
     --destructive: 0 84% 60%;
     --destructive-foreground: 0 0% 100%;
 
-    --border: 220 15% 88%;
-    --input: 220 15% 88%;
-    --ring: 210 80% 45%;
+    --border: 220 13% 91%;
+    --input: 220 13% 91%;
+    --ring: 160 50% 38%;
 
     --radius: 0.75rem;
 
-    /* Custom SOMI tokens */
+    /* SOMI brand tokens — adapted for light Greenly-style */
     --somi-navy: 220 40% 13%;
-    --somi-navy-light: 220 35% 20%;
-    --somi-gold: 38 90% 55%;
-    --somi-gold-light: 38 85% 65%;
+    --somi-navy-light: 220 25% 22%;
+    --somi-gold: 160 50% 38%;
+    --somi-gold-light: 160 45% 48%;
     --somi-blue: 210 80% 45%;
     --somi-blue-light: 210 70% 55%;
-    --somi-teal: 175 60% 40%;
-    --somi-warm: 20 30% 95%;
+    --somi-teal: 160 50% 38%;
+    --somi-warm: 220 14% 96%;
 
-    --gradient-hero: linear-gradient(135deg, hsl(220 40% 13%) 0%, hsl(220 35% 20%) 50%, hsl(210 50% 25%) 100%);
-    --gradient-gold: linear-gradient(135deg, hsl(38 90% 55%) 0%, hsl(38 85% 65%) 100%);
-    --gradient-dark: linear-gradient(180deg, hsl(220 40% 13%) 0%, hsl(220 35% 18%) 100%);
-    --shadow-card: 0 4px 24px -4px hsl(220 40% 13% / 0.08);
-    --shadow-elevated: 0 12px 40px -8px hsl(220 40% 13% / 0.15);
+    --gradient-hero: linear-gradient(135deg, hsl(0 0% 100%) 0%, hsl(160 30% 97%) 100%);
+    --gradient-gold: linear-gradient(135deg, hsl(160 50% 38%) 0%, hsl(160 45% 48%) 100%);
+    --gradient-dark: linear-gradient(180deg, hsl(220 20% 14%) 0%, hsl(220 25% 18%) 100%);
+    --shadow-card: 0 1px 3px 0 hsl(0 0% 0% / 0.04), 0 1px 2px -1px hsl(0 0% 0% / 0.04);
+    --shadow-elevated: 0 10px 25px -5px hsl(0 0% 0% / 0.06), 0 8px 10px -6px hsl(0 0% 0% / 0.04);
 
-    --font-display: 'Playfair Display', serif;
+    --font-display: 'Inter', sans-serif;
     --font-body: 'Inter', sans-serif;
 
     --sidebar-background: 0 0% 98%;
@@ -64,25 +64,25 @@
   }
 
   .dark {
-    --background: 220 40% 13%;
-    --foreground: 220 15% 92%;
-    --card: 220 35% 18%;
-    --card-foreground: 220 15% 92%;
-    --popover: 220 35% 18%;
-    --popover-foreground: 220 15% 92%;
-    --primary: 38 90% 55%;
-    --primary-foreground: 220 40% 13%;
-    --secondary: 210 80% 45%;
+    --background: 220 20% 14%;
+    --foreground: 220 14% 96%;
+    --card: 220 25% 18%;
+    --card-foreground: 220 14% 96%;
+    --popover: 220 25% 18%;
+    --popover-foreground: 220 14% 96%;
+    --primary: 160 50% 45%;
+    --primary-foreground: 220 20% 14%;
+    --secondary: 220 30% 22%;
     --secondary-foreground: 0 0% 100%;
-    --muted: 220 30% 22%;
-    --muted-foreground: 220 15% 65%;
-    --accent: 38 90% 55%;
-    --accent-foreground: 220 40% 13%;
+    --muted: 220 20% 22%;
+    --muted-foreground: 220 14% 65%;
+    --accent: 160 50% 45%;
+    --accent-foreground: 220 20% 14%;
     --destructive: 0 62.8% 30.6%;
     --destructive-foreground: 0 0% 100%;
-    --border: 220 30% 25%;
-    --input: 220 30% 25%;
-    --ring: 38 90% 55%;
+    --border: 220 20% 25%;
+    --input: 220 20% 25%;
+    --ring: 160 50% 45%;
     --sidebar-background: 240 5.9% 10%;
     --sidebar-foreground: 240 4.8% 95.9%;
     --sidebar-primary: 224.3 76.3% 48%;
@@ -100,12 +100,13 @@
   }
 
   body {
-    @apply bg-background text-foreground;
+    @apply bg-background text-foreground antialiased;
     font-family: var(--font-body);
   }
 
   h1, h2, h3, h4, h5, h6 {
     font-family: var(--font-display);
+    @apply tracking-tight;
   }
 }
 
@@ -119,6 +120,10 @@
     background-color: hsl(var(--somi-warm));
   }
 
+  .somi-section-light {
+    background-color: hsl(160 30% 97%);
+  }
+
   .somi-gradient-text {
     background: var(--gradient-gold);
     -webkit-background-clip: text;
@@ -128,37 +133,29 @@
 
   .somi-card {
     box-shadow: var(--shadow-card);
-    @apply rounded-xl bg-card transition-all duration-300;
+    @apply rounded-2xl bg-card transition-all duration-300;
   }
 
   .somi-card:hover {
     box-shadow: var(--shadow-elevated);
-    @apply -translate-y-1;
+    @apply -translate-y-0.5;
   }
 
   .somi-btn-gold {
-    background: var(--gradient-gold);
-    @apply font-semibold px-8 py-3 rounded-lg transition-all duration-300 hover:opacity-90 hover:scale-105;
-    color: hsl(var(--somi-navy));
+    @apply font-semibold px-6 py-3 rounded-full transition-all duration-200 hover:opacity-90 bg-primary text-primary-foreground;
   }
 
   .somi-btn-outline {
-    @apply font-semibold px-8 py-3 rounded-lg border-2 transition-all duration-300 hover:scale-105;
-    border-color: hsl(var(--somi-gold));
-    color: hsl(var(--somi-gold));
-  }
-
-  .somi-btn-outline:hover {
-    background-color: hsl(var(--somi-gold) / 0.1);
+    @apply font-semibold px-6 py-3 rounded-full border transition-all duration-200 border-border text-foreground hover:bg-muted;
   }
 
   .somi-stat-number {
     font-family: var(--font-display);
-    color: hsl(var(--somi-gold));
+    @apply text-primary;
   }
 
   .somi-map-bg {
-    background: var(--gradient-hero);
+    background: var(--gradient-dark);
   }
 }
 

@@ -11,7 +11,7 @@ const stats = [
     text: "The estimated percentage of cases in Nigeria that are diagnosed at an advanced, late stage due to a lack of early screening.",
   },
   {
-    number: "15 Minutes",
+    number: "15 Min",
     text: "The time it takes for a simple PSA blood test that can detect abnormalities early and save a life.",
   },
 ];
@@ -35,30 +35,33 @@ const solutions = [
 ];
 
 const fadeUp = {
-  hidden: { opacity: 0, y: 30 },
+  hidden: { opacity: 0, y: 20 },
   visible: (i: number) => ({
     opacity: 1,
     y: 0,
-    transition: { delay: i * 0.15, duration: 0.6 },
+    transition: { delay: i * 0.1, duration: 0.5 },
   }),
 };
 
 const CrisisSection = () => {
   return (
-    <section id="crisis" className="py-20 lg:py-28 bg-background">
+    <section id="crisis" className="py-20 lg:py-28 somi-section-light">
       <div className="container mx-auto px-4 lg:px-8">
-        {/* Stats */}
-        <motion.h2
+        <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className="font-display text-3xl sm:text-4xl lg:text-5xl font-bold text-center mb-16 text-foreground"
+          className="text-center max-w-2xl mx-auto mb-16"
         >
-          The Silent Crisis:{" "}
-          <span className="somi-gradient-text">Prostate Cancer in Nigeria</span>
-        </motion.h2>
+          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-4 text-foreground">
+            The Silent Crisis
+          </h2>
+          <p className="text-muted-foreground text-lg">
+            Prostate cancer in Nigeria demands urgent action. Here's why.
+          </p>
+        </motion.div>
 
-        <div className="grid md:grid-cols-3 gap-8 mb-24">
+        <div className="grid md:grid-cols-3 gap-6 mb-24">
           {stats.map((stat, i) => (
             <motion.div
               key={stat.number}
@@ -79,17 +82,18 @@ const CrisisSection = () => {
           ))}
         </div>
 
-        {/* Solutions */}
-        <motion.h3
+        <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className="font-display text-2xl sm:text-3xl font-bold text-center mb-12 text-foreground"
+          className="text-center max-w-2xl mx-auto mb-12"
         >
-          How We Are Changing the Narrative
-        </motion.h3>
+          <h3 className="text-2xl sm:text-3xl font-bold text-foreground">
+            How We Are Changing the Narrative
+          </h3>
+        </motion.div>
 
-        <div className="grid md:grid-cols-3 gap-8">
+        <div className="grid md:grid-cols-3 gap-6">
           {solutions.map((sol, i) => (
             <motion.div
               key={sol.title}
@@ -98,12 +102,12 @@ const CrisisSection = () => {
               whileInView="visible"
               viewport={{ once: true }}
               variants={fadeUp}
-              className="text-center p-8"
+              className="somi-card border border-border p-8"
             >
-              <div className="inline-flex items-center justify-center w-16 h-16 rounded-2xl bg-somi-gold/10 mb-6">
-                <sol.icon className="w-8 h-8 text-somi-gold" />
+              <div className="inline-flex items-center justify-center w-12 h-12 rounded-xl bg-primary/10 mb-5">
+                <sol.icon className="w-6 h-6 text-primary" />
               </div>
-              <h4 className="font-display text-xl font-bold mb-3 text-foreground">
+              <h4 className="text-lg font-bold mb-2 text-foreground">
                 {sol.title}
               </h4>
               <p className="text-muted-foreground leading-relaxed text-sm">
