@@ -33,11 +33,11 @@ const cards = [
 ];
 
 const fadeUp = {
-  hidden: { opacity: 0, y: 30 },
+  hidden: { opacity: 0, y: 20 },
   visible: (i: number) => ({
     opacity: 1,
     y: 0,
-    transition: { delay: i * 0.12, duration: 0.5 },
+    transition: { delay: i * 0.08, duration: 0.5 },
   }),
 };
 
@@ -45,17 +45,19 @@ const ActionCardsSection = () => {
   return (
     <section id="action" className="py-20 lg:py-28 bg-background">
       <div className="container mx-auto px-4 lg:px-8">
-        <motion.h2
+        <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className="font-display text-3xl sm:text-4xl lg:text-5xl font-bold text-center mb-16 text-foreground"
+          className="text-center max-w-2xl mx-auto mb-16"
         >
-          Join the Fight.{" "}
-          <span className="somi-gradient-text">Take Action Today.</span>
-        </motion.h2>
+          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-4 text-foreground">
+            Join the Fight.{" "}
+            <span className="somi-gradient-text">Take Action Today.</span>
+          </h2>
+        </motion.div>
 
-        <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
+        <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-5">
           {cards.map((card, i) => (
             <motion.div
               key={card.title}
@@ -66,10 +68,10 @@ const ActionCardsSection = () => {
               variants={fadeUp}
               className="somi-card p-6 flex flex-col border border-border group"
             >
-              <div className="inline-flex items-center justify-center w-12 h-12 rounded-xl bg-somi-gold/10 mb-5 group-hover:bg-somi-gold/20 transition-colors">
-                <card.icon className="w-6 h-6 text-somi-gold" />
+              <div className="inline-flex items-center justify-center w-10 h-10 rounded-xl bg-primary/10 mb-5 group-hover:bg-primary/15 transition-colors">
+                <card.icon className="w-5 h-5 text-primary" />
               </div>
-              <h3 className="font-display text-lg font-bold mb-3 text-foreground">
+              <h3 className="text-base font-bold mb-2 text-foreground">
                 {card.title}
               </h3>
               <p className="text-muted-foreground text-sm leading-relaxed flex-1 mb-6">
@@ -77,7 +79,7 @@ const ActionCardsSection = () => {
               </p>
               <a
                 href={card.href}
-                className="somi-btn-gold text-sm py-2 px-5 text-center"
+                className="somi-btn-gold text-sm py-2.5 px-5 text-center"
               >
                 {card.cta}
               </a>
