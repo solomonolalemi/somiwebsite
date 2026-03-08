@@ -199,7 +199,7 @@ const TeamSection = () => {
             <span className="somi-gradient-text">Team</span>
           </h2>
           <p className="text-muted-foreground text-lg">
-            Dedicated professionals united by one goal — saving men's lives through early detection and care.
+            Dedicated professionals united by one goal, saving men's lives through early detection and care.
           </p>
         </motion.div>
 

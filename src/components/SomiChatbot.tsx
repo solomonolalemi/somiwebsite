@@ -211,7 +211,7 @@ const SomiChatbot = () => {
                 <Bot className="w-4 h-4" />
               </div>
               <div className="flex-1 min-w-0">
-                <p className="text-sm font-bold">SOMI Assistant</p>
+                <p className="text-sm font-bold">SOMI</p>
                 <p className="text-[10px] opacity-70">
                   Prostate health • Screenings • Support
                 </p>
