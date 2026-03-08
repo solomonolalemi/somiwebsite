@@ -1,5 +1,5 @@
-import { motion, AnimatePresence } from "framer-motion";
-import { User, X } from "lucide-react";
+import { motion } from "framer-motion";
+import { Linkedin, Twitter, Instagram } from "lucide-react";
 import { useState } from "react";
 import {
   Dialog,
@@ -138,19 +138,11 @@ const MemberCard = ({
     {/* Top accent */}
     <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-primary to-primary/40 origin-left scale-x-0 group-hover:scale-x-100 transition-transform duration-500" />
 
-    {member.image ? (
-      <img
-        src={member.image}
-        alt={member.name}
-        className="w-16 h-16 rounded-full object-cover mb-4 ring-2 ring-transparent group-hover:ring-primary transition-all duration-400"
-      />
-    ) : (
-      <div className="inline-flex items-center justify-center w-16 h-16 rounded-full bg-primary/10 mb-4 group-hover:bg-primary transition-colors duration-400">
-        <span className="text-lg font-bold text-primary group-hover:text-primary-foreground transition-colors duration-400">
-          {getInitials(member.name)}
-        </span>
-      </div>
-    )}
+    <img
+      src={member.image || "/placeholder.svg"}
+      alt={member.name}
+      className="w-16 h-16 rounded-full object-cover mx-auto mb-4 ring-2 ring-transparent group-hover:ring-primary transition-all duration-400 bg-primary/10"
+    />
 
     <h3 className="text-sm font-bold text-foreground mb-1 group-hover:text-primary transition-colors duration-300">
       {member.name}
@@ -217,28 +209,31 @@ const TeamSection = () => {
         <DialogContent className="sm:max-w-lg">
           <DialogHeader>
             <div className="flex items-center gap-4 mb-2">
-              {selected?.image ? (
-                <img
-                  src={selected.image}
-                  alt={selected?.name}
-                  className="w-14 h-14 rounded-full object-cover"
-                />
-              ) : (
-                <div className="inline-flex items-center justify-center w-14 h-14 rounded-full bg-primary/10">
-                  <span className="text-lg font-bold text-primary">
-                    {selected ? getInitials(selected.name) : ""}
-                  </span>
-                </div>
-              )}
+              <img
+                src={selected?.image || "/placeholder.svg"}
+                alt={selected?.name}
+                className="w-14 h-14 rounded-full object-cover bg-primary/10"
+              />
               <div>
                 <DialogTitle className="text-lg">{selected?.name}</DialogTitle>
                 <p className="text-sm text-muted-foreground">{selected?.role}</p>
               </div>
             </div>
           </DialogHeader>
-          <DialogDescription className="text-muted-foreground leading-relaxed">
+          <DialogDescription className="text-muted-foreground leading-relaxed whitespace-pre-line">
             {selected?.bio || "Bio coming soon."}
           </DialogDescription>
+          <div className="flex items-center gap-3 pt-2">
+            <a href="#" className="p-2 rounded-full bg-muted hover:bg-primary/10 text-muted-foreground hover:text-primary transition-colors">
+              <Linkedin className="w-4 h-4" />
+            </a>
+            <a href="#" className="p-2 rounded-full bg-muted hover:bg-primary/10 text-muted-foreground hover:text-primary transition-colors">
+              <Twitter className="w-4 h-4" />
+            </a>
+            <a href="#" className="p-2 rounded-full bg-muted hover:bg-primary/10 text-muted-foreground hover:text-primary transition-colors">
+              <Instagram className="w-4 h-4" />
+            </a>
+          </div>
         </DialogContent>
       </Dialog>
     </section>
