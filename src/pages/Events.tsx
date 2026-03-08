@@ -177,7 +177,9 @@ const Events = () => {
                             <ArrowRight className="w-3.5 h-3.5" />
                           </a>
                           <a
-                            href="#"
+                            href="https://wa.me/+2348079025059"
+                            target="_blank"
+                            rel="noopener noreferrer"
                             className="inline-flex items-center gap-2 border border-border text-foreground font-semibold text-sm py-2.5 px-6 rounded-full hover:border-primary/40 hover:text-primary transition-colors"
                           >
                             <Users className="w-3.5 h-3.5" />

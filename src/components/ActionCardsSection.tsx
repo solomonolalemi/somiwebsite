@@ -36,7 +36,7 @@ const cards = [
     title: "Volunteer Your Expertise",
     text: "Are you a doctor, nurse, or psychologist? Join our mobile outreach teams.",
     cta: "Become a Volunteer",
-    href: "/about#team",
+    href: "https://wa.me/+2348079025059",
     featured: false,
   },
 ];
