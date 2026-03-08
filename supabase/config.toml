@@ -1,1 +1,4 @@
 project_id = "gtvkqmyidvxuqxihixni"
+
+[functions.somi-chat]
+verify_jwt = false
