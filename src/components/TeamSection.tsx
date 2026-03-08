@@ -138,19 +138,11 @@ const MemberCard = ({
     {/* Top accent */}
     <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-primary to-primary/40 origin-left scale-x-0 group-hover:scale-x-100 transition-transform duration-500" />
 
-    {member.image ? (
-      <img
-        src={member.image}
-        alt={member.name}
-        className="w-16 h-16 rounded-full object-cover mb-4 ring-2 ring-transparent group-hover:ring-primary transition-all duration-400"
-      />
-    ) : (
-      <div className="inline-flex items-center justify-center w-16 h-16 rounded-full bg-primary/10 mb-4 group-hover:bg-primary transition-colors duration-400">
-        <span className="text-lg font-bold text-primary group-hover:text-primary-foreground transition-colors duration-400">
-          {getInitials(member.name)}
-        </span>
-      </div>
-    )}
+    <img
+      src={member.image || "/placeholder.svg"}
+      alt={member.name}
+      className="w-16 h-16 rounded-full object-cover mx-auto mb-4 ring-2 ring-transparent group-hover:ring-primary transition-all duration-400 bg-primary/10"
+    />
 
     <h3 className="text-sm font-bold text-foreground mb-1 group-hover:text-primary transition-colors duration-300">
       {member.name}
