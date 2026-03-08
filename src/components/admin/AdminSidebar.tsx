@@ -29,6 +29,7 @@ const navItems = [
   { title: "Events & Outreaches", url: "/admin/events", icon: Calendar, hint: "Appears on: Events page" },
   { title: "Impact Stories", url: "/admin/stories", icon: BookOpen, hint: "Appears on: Stories page → Media grid" },
   { title: "Impact Statistics", url: "/admin/stats", icon: BarChart3, hint: "Appears on: Our Impact page → Counters" },
+  { title: "Publications", url: "/admin/publications", icon: GraduationCap, hint: "Appears on: Homepage → Research section" },
   { title: "Donations", url: "/admin/donations", icon: DollarSign, hint: "Internal records tracking" },
 ];
 

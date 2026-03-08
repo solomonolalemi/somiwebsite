@@ -50,6 +50,7 @@ const App = () => (
             <Route path="stories" element={<AdminStories />} />
             <Route path="stats" element={<AdminStats />} />
             <Route path="donations" element={<AdminDonations />} />
+            <Route path="publications" element={<AdminPublications />} />
             <Route path="users" element={<AdminUsers />} />
           </Route>
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
