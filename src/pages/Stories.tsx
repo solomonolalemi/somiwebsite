@@ -38,7 +38,7 @@ const impactStories = [
   {
     id: 3,
     category: "Digital Innovation",
-    image: "https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?auto=format&fit=crop&w=800&q=80",
+    image: somiEvent7,
     title: "Modernizing Outreach: How SOMI Uses Tech for Secure Health Data",
     description: "A look behind the scenes at our digital intake process, paving the way for our future dedicated health data center to track national prostate cancer trends.",
     hasVideo: false,
