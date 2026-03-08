@@ -1,7 +1,10 @@
 import { motion } from "framer-motion";
 import { Linkedin, Twitter, Instagram } from "lucide-react";
 import { useState } from "react";
-import teamDaniel from "@/assets/team-daniel.jpeg";
+import teamDaniel from "@/assets/team-daniel.png";
+import teamKabir from "@/assets/team-kabir.png";
+import teamAdemola from "@/assets/team-ademola-bank.jpeg";
+import teamSolomon from "@/assets/team-solomon.png";
 import {
   Dialog,
   DialogContent,
