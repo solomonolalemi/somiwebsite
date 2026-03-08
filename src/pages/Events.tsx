@@ -29,9 +29,16 @@ const upcomingEvents = [
   },
 ];
 
+import somiEvent1 from "@/assets/somi-event-1.jpg";
+import somiEvent2 from "@/assets/somi-event-2.jpg";
 import somiEvent3 from "@/assets/somi-event-3.jpg";
 import somiEvent4 from "@/assets/somi-event-4.jpg";
+import somiEvent5 from "@/assets/somi-event-5.jpg";
+import somiEvent6 from "@/assets/somi-event-6.jpg";
+import somiEvent7 from "@/assets/somi-event-7.jpg";
+import somiEvent8 from "@/assets/somi-event-8.jpg";
 import somiEvent9 from "@/assets/somi-event-9.jpg";
+import somiEvent10 from "@/assets/somi-event-10.jpg";
 
 const pastEvents = [
   {
@@ -39,18 +46,21 @@ const pastEvents = [
     caption: "Ilesha Outreach (Feb 2025)",
     stat: "Over 400 men screened",
     location: "Osun State",
+    gallery: [somiEvent3, somiEvent1, somiEvent2, somiEvent5],
   },
   {
     image: somiEvent4,
     caption: "Lekki LCDA (Dec 2025)",
     stat: "Over 200 men screened",
     location: "Lagos",
+    gallery: [somiEvent4, somiEvent6, somiEvent7, somiEvent8],
   },
   {
     image: somiEvent9,
     caption: "Ajah LCDA (Feb 2026)",
     stat: "Over 180 men screened",
     location: "Lagos",
+    gallery: [somiEvent9, somiEvent10, somiEvent1, somiEvent6],
   },
 ];
 
