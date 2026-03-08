@@ -114,7 +114,7 @@ const Stories = () => {
           </motion.p>
           <motion.div {...fadeUp} transition={{ delay: 0.3, duration: 0.5 }} className="flex flex-wrap justify-center gap-3">
             <a
-              href="https://youtube.com"
+              href="https://www.youtube.com/@SavingOurMen"
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center gap-2 bg-primary text-primary-foreground font-semibold py-3 px-7 rounded-full hover:opacity-90 transition-opacity text-sm"
@@ -123,7 +123,7 @@ const Stories = () => {
               Subscribe on YouTube
             </a>
             <a
-              href="https://instagram.com"
+              href="https://www.instagram.com/savingourmen/"
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center gap-2 border border-background/20 text-background font-semibold py-3 px-7 rounded-full hover:border-primary/50 hover:text-primary transition-colors text-sm"
@@ -231,7 +231,7 @@ const Stories = () => {
           {/* Secondary CTA */}
           <motion.div {...fadeUp} transition={{ delay: 0.5 }} className="text-center mt-10">
             <a
-              href="https://youtube.com"
+              href="https://www.youtube.com/@SavingOurMen"
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center gap-2 border border-border text-foreground font-semibold text-sm py-2.5 px-6 rounded-full hover:border-primary/40 hover:text-primary transition-colors"

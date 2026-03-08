@@ -139,7 +139,7 @@ const GetScreened = () => {
           <motion.p {...fadeUp} transition={{ delay: 0.1, duration: 0.5 }} className="text-background/60 text-lg mb-8">
             You are not alone. Our trained counselors are available to talk — confidentially and free of charge.
           </motion.p>
-          <motion.a {...fadeUp} transition={{ delay: 0.2, duration: 0.5 }} href="https://wa.me/2348000000000" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-3 bg-primary text-primary-foreground font-semibold py-3.5 px-8 rounded-full hover:opacity-90 transition-opacity">
+          <motion.a {...fadeUp} transition={{ delay: 0.2, duration: 0.5 }} href="https://wa.me/+2348115239655" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-3 bg-primary text-primary-foreground font-semibold py-3.5 px-8 rounded-full hover:opacity-90 transition-opacity">
             <MessageCircleHeart className="w-5 h-5" />
             Chat with a SOMI Counselor on WhatsApp
           </motion.a>
