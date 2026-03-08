@@ -35,7 +35,7 @@ const PatientPortalSection = () => {
               View our calendar for upcoming free mobile screening events in your
               area.
             </p>
-            <a href="#calendar" className="somi-btn-gold text-sm py-2.5 px-5 text-center">
+            <a href="/events" className="somi-btn-gold text-sm py-2.5 px-5 text-center">
               View Event Calendar
             </a>
           </motion.div>
