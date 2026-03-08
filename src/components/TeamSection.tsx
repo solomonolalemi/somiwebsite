@@ -192,11 +192,19 @@ const TeamSection = () => {
         <DialogContent className="sm:max-w-lg">
           <DialogHeader>
             <div className="flex items-center gap-4 mb-2">
-              <div className="inline-flex items-center justify-center w-14 h-14 rounded-full bg-primary/10">
-                <span className="text-lg font-bold text-primary">
-                  {selected ? getInitials(selected.name) : ""}
-                </span>
-              </div>
+              {selected?.image ? (
+                <img
+                  src={selected.image}
+                  alt={selected?.name}
+                  className="w-14 h-14 rounded-full object-cover"
+                />
+              ) : (
+                <div className="inline-flex items-center justify-center w-14 h-14 rounded-full bg-primary/10">
+                  <span className="text-lg font-bold text-primary">
+                    {selected ? getInitials(selected.name) : ""}
+                  </span>
+                </div>
+              )}
               <div>
                 <DialogTitle className="text-lg">{selected?.name}</DialogTitle>
                 <p className="text-sm text-muted-foreground">{selected?.role}</p>
