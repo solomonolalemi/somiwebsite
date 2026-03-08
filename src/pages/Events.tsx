@@ -1,5 +1,6 @@
-import { motion } from "framer-motion";
-import { Calendar, MapPin, Clock, ArrowRight, Users, Building2, Heart } from "lucide-react";
+import { useState } from "react";
+import { motion, AnimatePresence } from "framer-motion";
+import { Calendar, MapPin, Clock, ArrowRight, Users, Building2, Heart, X, ChevronLeft, ChevronRight } from "lucide-react";
 import { Link } from "react-router-dom";
 import SomiHeader from "@/components/SomiHeader";
 import SomiFooter from "@/components/SomiFooter";
@@ -28,9 +29,16 @@ const upcomingEvents = [
   },
 ];
 
+import somiEvent1 from "@/assets/somi-event-1.jpg";
+import somiEvent2 from "@/assets/somi-event-2.jpg";
 import somiEvent3 from "@/assets/somi-event-3.jpg";
 import somiEvent4 from "@/assets/somi-event-4.jpg";
+import somiEvent5 from "@/assets/somi-event-5.jpg";
+import somiEvent6 from "@/assets/somi-event-6.jpg";
+import somiEvent7 from "@/assets/somi-event-7.jpg";
+import somiEvent8 from "@/assets/somi-event-8.jpg";
 import somiEvent9 from "@/assets/somi-event-9.jpg";
+import somiEvent10 from "@/assets/somi-event-10.jpg";
 
 const pastEvents = [
   {
@@ -38,22 +46,40 @@ const pastEvents = [
     caption: "Ilesha Outreach (Feb 2025)",
     stat: "Over 400 men screened",
     location: "Osun State",
+    gallery: [somiEvent3, somiEvent1, somiEvent2, somiEvent5],
   },
   {
     image: somiEvent4,
     caption: "Lekki LCDA (Dec 2025)",
     stat: "Over 200 men screened",
     location: "Lagos",
+    gallery: [somiEvent4, somiEvent6, somiEvent7, somiEvent8],
   },
   {
     image: somiEvent9,
     caption: "Ajah LCDA (Feb 2026)",
     stat: "Over 180 men screened",
     location: "Lagos",
+    gallery: [somiEvent9, somiEvent10, somiEvent1, somiEvent6],
   },
 ];
 
 const Events = () => {
+  const [lightbox, setLightbox] = useState<{ eventIdx: number; photoIdx: number } | null>(null);
+
+  const openLightbox = (eventIdx: number) => setLightbox({ eventIdx, photoIdx: 0 });
+  const closeLightbox = () => setLightbox(null);
+
+  const currentGallery = lightbox ? pastEvents[lightbox.eventIdx].gallery : [];
+  const goNext = () => {
+    if (!lightbox) return;
+    setLightbox({ ...lightbox, photoIdx: (lightbox.photoIdx + 1) % currentGallery.length });
+  };
+  const goPrev = () => {
+    if (!lightbox) return;
+    setLightbox({ ...lightbox, photoIdx: (lightbox.photoIdx - 1 + currentGallery.length) % currentGallery.length });
+  };
+
   return (
     <div className="min-h-screen bg-background">
       <SomiHeader />
@@ -186,6 +212,7 @@ const Events = () => {
                 {...fadeUp}
                 transition={{ delay: i * 0.12, duration: 0.5 }}
                 whileHover={{ y: -6, scale: 1.02 }}
+                onClick={() => openLightbox(i)}
                 className={`group relative rounded-2xl overflow-hidden cursor-pointer ${i === 0 ? "md:row-span-2" : ""}`}
               >
                 <div className={`relative ${i === 0 ? "h-80 md:h-full" : "h-64"}`}>
@@ -254,6 +281,71 @@ const Events = () => {
           </div>
         </div>
       </section>
+
+      {/* Lightbox */}
+      <AnimatePresence>
+        {lightbox && (
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            className="fixed inset-0 z-50 bg-foreground/95 flex items-center justify-center"
+            onClick={closeLightbox}
+          >
+            {/* Close button */}
+            <button
+              onClick={closeLightbox}
+              className="absolute top-6 right-6 text-background/70 hover:text-background transition-colors z-10"
+            >
+              <X className="w-8 h-8" />
+            </button>
+
+            {/* Event info */}
+            <div className="absolute top-6 left-6 z-10">
+              <h3 className="text-background font-bold text-lg">{pastEvents[lightbox.eventIdx].caption}</h3>
+              <p className="text-background/50 text-sm">{pastEvents[lightbox.eventIdx].stat}</p>
+            </div>
+
+            {/* Navigation */}
+            <button
+              onClick={(e) => { e.stopPropagation(); goPrev(); }}
+              className="absolute left-4 sm:left-8 text-background/50 hover:text-background transition-colors z-10"
+            >
+              <ChevronLeft className="w-10 h-10" />
+            </button>
+            <button
+              onClick={(e) => { e.stopPropagation(); goNext(); }}
+              className="absolute right-4 sm:right-8 text-background/50 hover:text-background transition-colors z-10"
+            >
+              <ChevronRight className="w-10 h-10" />
+            </button>
+
+            {/* Image */}
+            <motion.img
+              key={`${lightbox.eventIdx}-${lightbox.photoIdx}`}
+              initial={{ opacity: 0, scale: 0.95 }}
+              animate={{ opacity: 1, scale: 1 }}
+              exit={{ opacity: 0, scale: 0.95 }}
+              transition={{ duration: 0.3 }}
+              src={currentGallery[lightbox.photoIdx]}
+              alt={`${pastEvents[lightbox.eventIdx].caption} - Photo ${lightbox.photoIdx + 1}`}
+              className="max-h-[80vh] max-w-[90vw] object-contain rounded-xl"
+              onClick={(e) => e.stopPropagation()}
+            />
+
+            {/* Dots */}
+            <div className="absolute bottom-8 flex gap-2">
+              {currentGallery.map((_, idx) => (
+                <button
+                  key={idx}
+                  onClick={(e) => { e.stopPropagation(); setLightbox({ ...lightbox, photoIdx: idx }); }}
+                  className={`w-2.5 h-2.5 rounded-full transition-all ${idx === lightbox.photoIdx ? "bg-primary scale-125" : "bg-background/30 hover:bg-background/50"}`}
+                />
+              ))}
+            </div>
+          </motion.div>
+        )}
+      </AnimatePresence>
 
       <SomiFooter />
     </div>
