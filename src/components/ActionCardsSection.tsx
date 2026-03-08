@@ -9,7 +9,7 @@ const cards = [
     title: "Join the Life-Savers Club",
     text: "Commit to a monthly donation of ₦5,000 to ensure we have a steady supply of PSA testing kits year-round.",
     cta: "Give Monthly",
-    href: "#donate",
+    href: "/donate",
     featured: true,
   },
   {
@@ -18,7 +18,7 @@ const cards = [
     title: "Corporate Partnerships & CSR",
     text: "Sponsor a mobile screening event for a local community, or bring our medical team to your office for staff wellness.",
     cta: "Partner With Us",
-    href: "#partner",
+    href: "/partners",
     featured: false,
   },
   {
@@ -27,7 +27,7 @@ const cards = [
     title: "Start a Fundraiser",
     text: "Dedicate your birthday, a 10km run, or a full marathon to raising funds.",
     cta: "Start Campaign",
-    href: "#campaign",
+    href: "/donate",
     featured: false,
   },
   {
@@ -36,7 +36,7 @@ const cards = [
     title: "Volunteer Your Expertise",
     text: "Are you a doctor, nurse, or psychologist? Join our mobile outreach teams.",
     cta: "Become a Volunteer",
-    href: "#volunteer",
+    href: "/about#team",
     featured: false,
   },
 ];
