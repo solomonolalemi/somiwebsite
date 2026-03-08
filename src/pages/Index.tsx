@@ -4,7 +4,6 @@ import CrisisSection from "@/components/CrisisSection";
 import ImpactMapSection from "@/components/ImpactMapSection";
 import ActionCardsSection from "@/components/ActionCardsSection";
 import PatientPortalSection from "@/components/PatientPortalSection";
-
 import SomiFooter from "@/components/SomiFooter";
 
 const Index = () => {
