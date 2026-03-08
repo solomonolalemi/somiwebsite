@@ -9,7 +9,7 @@ const cards = [
     title: "Join the Life-Savers Club",
     text: "Commit to a monthly donation of ₦5,000 to ensure we have a steady supply of PSA testing kits year-round.",
     cta: "Give Monthly",
-    href: "#donate",
+    href: "/donate",
     featured: true,
   },
   {
