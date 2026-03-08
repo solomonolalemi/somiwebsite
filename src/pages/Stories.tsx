@@ -262,6 +262,8 @@ const Stories = () => {
         </div>
       </section>
 
+      <BlogSection />
+
       <SomiFooter />
     </div>
   );
