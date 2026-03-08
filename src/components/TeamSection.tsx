@@ -38,7 +38,7 @@ const leadership: TeamMember[] = [
     bio: "Dr. Favour Okoye is a dedicated China-trained physician who returned to Nigeria with a mission to contribute to his community's healthcare. Specializing in family medicine, hospice, and palliative care, he is a strong advocate for early cancer screening, timely diagnosis, and prompt treatment. Dr. Okoye's commitment to improving health outcomes reflects his passion for holistic patient care. Outside of his professional life, he enjoys traveling and staying active by playing both table and long tennis, making a balanced approach to life a core aspect of his philosophy.",
   },
   {
-    name: "Ayobami",
+    name: "Ayodeji Ojetunde",
     role: "Head of Research",
   },
   {
