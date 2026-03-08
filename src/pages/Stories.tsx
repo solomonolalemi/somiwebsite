@@ -5,6 +5,11 @@ import { Link } from "react-router-dom";
 import SomiHeader from "@/components/SomiHeader";
 import SomiFooter from "@/components/SomiFooter";
 import somiLogo from "@/assets/somi-logo.png";
+import somiEvent5 from "@/assets/somi-event-5.jpg";
+import somiEvent6 from "@/assets/somi-event-6.jpg";
+import somiEvent7 from "@/assets/somi-event-7.jpg";
+import somiEvent8 from "@/assets/somi-event-8.jpg";
+import somiEvent2 from "@/assets/somi-event-2.jpg";
 
 const fadeUp = {
   initial: { opacity: 0, y: 24 },
