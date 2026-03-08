@@ -14,9 +14,9 @@ const fadeUp = {
 };
 
 const pins = [
-  { id: 1, state: "Osun State", title: "Ilesha Outreach (Feb 2025)", detail: "400+ Men Screened", x: 42, y: 58 },
-  { id: 2, state: "Lagos State", title: "Lekki LCDA Outreach (Dec 2025)", detail: "200+ Men Screened", x: 30, y: 68 },
-  { id: 3, state: "Lagos State", title: "Ajah LCDA Outreach (Feb 2026)", detail: "180+ Men Screened", x: 33, y: 72 },
+  { id: 1, state: "Osun State", title: "Ilesha Outreach (Feb 2025)", detail: "400+ Men Screened", x: 26, y: 68 },
+  { id: 2, state: "Lagos State", title: "Lekki LCDA Outreach (Dec 2025)", detail: "200+ Men Screened", x: 16, y: 80 },
+  { id: 3, state: "Lagos State", title: "Ajah LCDA Outreach (Feb 2026)", detail: "180+ Men Screened", x: 19, y: 82 },
 ];
 
 const fundAllocation = [
