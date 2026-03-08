@@ -66,15 +66,18 @@ const AdminLogin = () => {
       _user_id: authData.user.id,
       _role: "admin",
     });
+    const { data: isSA } = await supabase.rpc("is_superadmin", {
+      _user_id: authData.user.id,
+    });
 
-    if (!isAdmin) {
+    if (!isAdmin && !isSA) {
       await supabase.auth.signOut();
       toast({ title: "Access denied", description: "You are not an admin.", variant: "destructive" });
       setLoading(false);
       return;
     }
 
-    navigate("/admin/blog");
+    navigate("/admin/dashboard");
   };
 
   return (
