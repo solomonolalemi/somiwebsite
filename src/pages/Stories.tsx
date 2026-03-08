@@ -46,7 +46,7 @@ const impactStories = [
   {
     id: 4,
     category: "Government Partnership",
-    image: "https://images.unsplash.com/photo-1582213782179-e0d53f98f2ca?auto=format&fit=crop&w=800&q=80",
+    image: somiEvent8,
     title: "Partnering for Health: The Lekki LCDA 200-Man Screening Event",
     description: "See the power of collaboration as we partnered with local government to bring comprehensive men's wellness directly to the Lekki community.",
     hasVideo: true,
