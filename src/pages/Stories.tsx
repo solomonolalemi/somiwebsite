@@ -22,7 +22,7 @@ const impactStories = [
   {
     id: 1,
     category: "Community Impact",
-    image: "https://images.unsplash.com/photo-1576091160550-2173dba999ef?auto=format&fit=crop&w=800&q=80",
+    image: somiEvent5,
     title: "Over 400 Men Screened: The Ilesha Mass Outreach Highlight",
     description: "Watch how our medical team mobilized to bring early detection to Osun State, breaking down healthcare barriers in a single day.",
     hasVideo: true,
