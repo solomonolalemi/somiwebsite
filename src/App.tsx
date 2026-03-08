@@ -12,6 +12,8 @@ import CorporatePartners from "./pages/CorporatePartners";
 import Events from "./pages/Events";
 import Donate from "./pages/Donate";
 import NotFound from "./pages/NotFound";
+import AdminLogin from "./pages/AdminLogin";
+import AdminBlog from "./pages/AdminBlog";
 import SomiChatbot from "./components/SomiChatbot";
 import NewsletterPopup from "./components/NewsletterPopup";
 
@@ -32,6 +34,8 @@ const App = () => (
           <Route path="/partners" element={<CorporatePartners />} />
           <Route path="/events" element={<Events />} />
           <Route path="/donate" element={<Donate />} />
+          <Route path="/admin" element={<AdminLogin />} />
+          <Route path="/admin/blog" element={<AdminBlog />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
         </Routes>
