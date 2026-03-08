@@ -1,7 +1,10 @@
 import { motion } from "framer-motion";
 import { Linkedin, Twitter, Instagram } from "lucide-react";
 import { useState } from "react";
-import teamDaniel from "@/assets/team-daniel.jpeg";
+import teamDaniel from "@/assets/team-daniel.png";
+import teamKabir from "@/assets/team-kabir.png";
+import teamAdemola from "@/assets/team-ademola-bank.jpeg";
+import teamSolomon from "@/assets/team-solomon.png";
 import {
   Dialog,
   DialogContent,
@@ -31,6 +34,7 @@ const leadership: TeamMember[] = [
   {
     name: "Dr. Kabir Shomorin",
     role: "Head of Programs & Impacts",
+    image: teamKabir,
     bio: "He is a seasoned dental surgeon, whom over the years as a healthcare provider in his field of expertise, had gained recognition. His background involvement in providing for the underserved populace has steered his motives to continuously render community's health education and workshops, collaborating with local government agencies and other NGOs. His belief in giving to the community has been the driving force behind his relentless humanitarian services. When he is not providing solutions to worries of mankind, he is busy travelling, hiking and seeking new adventures.",
   },
   {
@@ -56,6 +60,7 @@ const leadership: TeamMember[] = [
   {
     name: "Solomon Olalemi",
     role: "Head of Information Technology",
+    image: teamSolomon,
     bio: "Solomon Olalemi is a visionary leader dedicated to nurturing a generation of better men in society. With over 5 years of experience as a Product Manager in the financial sector, Solomon has harnessed his innovative spirit to create impactful solutions that enhance lives. Currently serving as the Head of Digital Product at Polaris Bank, Nigeria, he continues to simplify financial activities for countless individuals.\n\nBeyond his professional achievements, Solomon is deeply passionate about health and wellness. He envisions a world where people thrive in both physical and spiritual well-being. Through his NGO work, Solomon channels his expertise in innovation and his commitment to healthy living, striving to create lasting positive change in communities across Nigeria.",
   },
   {
@@ -93,6 +98,7 @@ const boardOfTrustees: TeamMember[] = [
   {
     name: "E.M Ademola-Bank Esq",
     role: "Board of Trustees",
+    image: teamAdemola,
   },
 ];
 
