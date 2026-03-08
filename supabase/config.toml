@@ -2,3 +2,6 @@ project_id = "gtvkqmyidvxuqxihixni"
 
 [functions.somi-chat]
 verify_jwt = false
+
+[functions.create-checkout]
+verify_jwt = false

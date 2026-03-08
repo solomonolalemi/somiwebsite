@@ -40,7 +40,7 @@ const SomiHeader = () => {
 
         <div className="flex items-center gap-3">
           <a
-            href="#action"
+            href="/donate"
             className="somi-btn-gold text-sm py-2.5 px-5 hidden sm:inline-block"
           >
             Donate Now
@@ -68,7 +68,7 @@ const SomiHeader = () => {
             </a>
           ))}
           <a
-            href="#action"
+            href="/donate"
             className="somi-btn-gold text-sm py-2.5 px-5 mt-4 inline-block"
           >
             Donate Now

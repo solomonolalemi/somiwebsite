@@ -10,6 +10,7 @@ import GetScreened from "./pages/GetScreened";
 import Stories from "./pages/Stories";
 import CorporatePartners from "./pages/CorporatePartners";
 import Events from "./pages/Events";
+import Donate from "./pages/Donate";
 import NotFound from "./pages/NotFound";
 import SomiChatbot from "./components/SomiChatbot";
 
@@ -29,6 +30,7 @@ const App = () => (
           <Route path="/stories" element={<Stories />} />
           <Route path="/partners" element={<CorporatePartners />} />
           <Route path="/events" element={<Events />} />
+          <Route path="/donate" element={<Donate />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
         </Routes>
