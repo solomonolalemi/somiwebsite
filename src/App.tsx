@@ -13,6 +13,7 @@ import Events from "./pages/Events";
 import Donate from "./pages/Donate";
 import NotFound from "./pages/NotFound";
 import SomiChatbot from "./components/SomiChatbot";
+import NewsletterPopup from "./components/NewsletterPopup";
 
 const queryClient = new QueryClient();
 
@@ -35,6 +36,7 @@ const App = () => (
           <Route path="*" element={<NotFound />} />
         </Routes>
         <SomiChatbot />
+        <NewsletterPopup />
       </BrowserRouter>
     </TooltipProvider>
   </QueryClientProvider>
