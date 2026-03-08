@@ -3,7 +3,7 @@ import { Menu, X } from "lucide-react";
 import somiLogo from "@/assets/somi-logo.png";
 
 const navLinks = [
-  { label: "About Us", href: "#crisis" },
+  { label: "About Us", href: "/about" },
   { label: "Our Impact", href: "#impact" },
   { label: "Get Screened", href: "#screened" },
   { label: "Stories", href: "#stories" },
