@@ -212,6 +212,7 @@ const Events = () => {
                 {...fadeUp}
                 transition={{ delay: i * 0.12, duration: 0.5 }}
                 whileHover={{ y: -6, scale: 1.02 }}
+                onClick={() => openLightbox(i)}
                 className={`group relative rounded-2xl overflow-hidden cursor-pointer ${i === 0 ? "md:row-span-2" : ""}`}
               >
                 <div className={`relative ${i === 0 ? "h-80 md:h-full" : "h-64"}`}>
