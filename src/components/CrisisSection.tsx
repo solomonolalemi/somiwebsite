@@ -94,29 +94,7 @@ const CrisisSection = () => {
           </h3>
         </motion.div>
 
-        <div className="grid md:grid-cols-3 gap-6">
-          {solutions.map((sol, i) => (
-            <motion.div
-              key={sol.title}
-              custom={i}
-              initial="hidden"
-              whileInView="visible"
-              viewport={{ once: true }}
-              variants={fadeUp}
-              className="somi-card border border-border p-8"
-            >
-              <div className="inline-flex items-center justify-center w-12 h-12 rounded-xl bg-primary/10 mb-5">
-                <sol.icon className="w-6 h-6 text-primary" />
-              </div>
-              <h4 className="text-lg font-bold mb-2 text-foreground">
-                {sol.title}
-              </h4>
-              <p className="text-muted-foreground leading-relaxed text-sm">
-                {sol.text}
-              </p>
-            </motion.div>
-          ))}
-        </div>
+        <NarrativeCards />
       </div>
     </section>
   );
