@@ -74,7 +74,6 @@ const dataFeatures = [
 ];
 
 const OurImpact = () => {
-  const [activePin, setActivePin] = useState<number | null>(null);
 
   return (
     <div className="min-h-screen bg-background">
