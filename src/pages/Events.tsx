@@ -1,5 +1,6 @@
-import { motion } from "framer-motion";
-import { Calendar, MapPin, Clock, ArrowRight, Users, Building2, Heart } from "lucide-react";
+import { useState } from "react";
+import { motion, AnimatePresence } from "framer-motion";
+import { Calendar, MapPin, Clock, ArrowRight, Users, Building2, Heart, X, ChevronLeft, ChevronRight } from "lucide-react";
 import { Link } from "react-router-dom";
 import SomiHeader from "@/components/SomiHeader";
 import SomiFooter from "@/components/SomiFooter";
