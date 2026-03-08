@@ -123,7 +123,7 @@ const Stories = () => {
               Subscribe on YouTube
             </a>
             <a
-              href="https://instagram.com"
+              href="https://www.instagram.com/savingourmen/"
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center gap-2 border border-background/20 text-background font-semibold py-3 px-7 rounded-full hover:border-primary/50 hover:text-primary transition-colors text-sm"
