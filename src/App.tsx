@@ -9,6 +9,7 @@ import OurImpact from "./pages/OurImpact";
 import GetScreened from "./pages/GetScreened";
 import Stories from "./pages/Stories";
 import CorporatePartners from "./pages/CorporatePartners";
+import Events from "./pages/Events";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
