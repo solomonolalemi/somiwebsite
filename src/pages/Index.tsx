@@ -4,7 +4,7 @@ import CrisisSection from "@/components/CrisisSection";
 import ImpactMapSection from "@/components/ImpactMapSection";
 import ActionCardsSection from "@/components/ActionCardsSection";
 import PatientPortalSection from "@/components/PatientPortalSection";
-import TeamSection from "@/components/TeamSection";
+
 import SomiFooter from "@/components/SomiFooter";
 
 const Index = () => {
@@ -17,7 +17,7 @@ const Index = () => {
         <ImpactMapSection />
         <ActionCardsSection />
         <PatientPortalSection />
-        <TeamSection />
+        
       </main>
       <SomiFooter />
     </div>
