@@ -124,8 +124,6 @@ const MemberCard = ({
         </span>
       </div>
     )}
-      </span>
-    </div>
 
     <h3 className="text-sm font-bold text-foreground mb-1 group-hover:text-primary transition-colors duration-300">
       {member.name}
