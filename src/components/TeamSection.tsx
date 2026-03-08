@@ -1,6 +1,7 @@
 import { motion } from "framer-motion";
 import { Linkedin, Twitter, Instagram } from "lucide-react";
 import { useState } from "react";
+import teamDaniel from "@/assets/team-daniel.jpeg";
 import {
   Dialog,
   DialogContent,
