@@ -209,28 +209,31 @@ const TeamSection = () => {
         <DialogContent className="sm:max-w-lg">
           <DialogHeader>
             <div className="flex items-center gap-4 mb-2">
-              {selected?.image ? (
-                <img
-                  src={selected.image}
-                  alt={selected?.name}
-                  className="w-14 h-14 rounded-full object-cover"
-                />
-              ) : (
-                <div className="inline-flex items-center justify-center w-14 h-14 rounded-full bg-primary/10">
-                  <span className="text-lg font-bold text-primary">
-                    {selected ? getInitials(selected.name) : ""}
-                  </span>
-                </div>
-              )}
+              <img
+                src={selected?.image || "/placeholder.svg"}
+                alt={selected?.name}
+                className="w-14 h-14 rounded-full object-cover bg-primary/10"
+              />
               <div>
                 <DialogTitle className="text-lg">{selected?.name}</DialogTitle>
                 <p className="text-sm text-muted-foreground">{selected?.role}</p>
               </div>
             </div>
           </DialogHeader>
-          <DialogDescription className="text-muted-foreground leading-relaxed">
+          <DialogDescription className="text-muted-foreground leading-relaxed whitespace-pre-line">
             {selected?.bio || "Bio coming soon."}
           </DialogDescription>
+          <div className="flex items-center gap-3 pt-2">
+            <a href="#" className="p-2 rounded-full bg-muted hover:bg-primary/10 text-muted-foreground hover:text-primary transition-colors">
+              <Linkedin className="w-4 h-4" />
+            </a>
+            <a href="#" className="p-2 rounded-full bg-muted hover:bg-primary/10 text-muted-foreground hover:text-primary transition-colors">
+              <Twitter className="w-4 h-4" />
+            </a>
+            <a href="#" className="p-2 rounded-full bg-muted hover:bg-primary/10 text-muted-foreground hover:text-primary transition-colors">
+              <Instagram className="w-4 h-4" />
+            </a>
+          </div>
         </DialogContent>
       </Dialog>
     </section>
