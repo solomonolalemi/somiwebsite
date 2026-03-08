@@ -236,6 +236,45 @@ export type Database = {
         }
         Relationships: []
       }
+      research_publications: {
+        Row: {
+          cover_image_url: string | null
+          created_at: string
+          description: string | null
+          display_order: number
+          id: string
+          published: boolean
+          publisher: string
+          title: string
+          updated_at: string
+          url: string
+        }
+        Insert: {
+          cover_image_url?: string | null
+          created_at?: string
+          description?: string | null
+          display_order?: number
+          id?: string
+          published?: boolean
+          publisher: string
+          title: string
+          updated_at?: string
+          url: string
+        }
+        Update: {
+          cover_image_url?: string | null
+          created_at?: string
+          description?: string | null
+          display_order?: number
+          id?: string
+          published?: boolean
+          publisher?: string
+          title?: string
+          updated_at?: string
+          url?: string
+        }
+        Relationships: []
+      }
       user_roles: {
         Row: {
           id: string
