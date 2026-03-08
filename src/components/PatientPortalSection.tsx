@@ -35,7 +35,7 @@ const PatientPortalSection = () => {
               View our calendar for upcoming free mobile screening events in your
               area.
             </p>
-            <a href="#calendar" className="somi-btn-gold text-sm py-2.5 px-5 text-center">
+            <a href="/events" className="somi-btn-gold text-sm py-2.5 px-5 text-center">
               View Event Calendar
             </a>
           </motion.div>
@@ -55,7 +55,7 @@ const PatientPortalSection = () => {
             <p className="text-muted-foreground text-sm leading-relaxed flex-1 mb-6">
               Have questions? Speak confidentially with our medical advisors.
             </p>
-            <a href="https://wa.me/" target="_blank" rel="noopener noreferrer" className="somi-btn-outline text-sm py-2.5 px-5 text-center">
+            <a href="https://wa.me/+2348115239655" target="_blank" rel="noopener noreferrer" className="somi-btn-outline text-sm py-2.5 px-5 text-center">
               Chat on WhatsApp
             </a>
           </motion.div>
