@@ -29,7 +29,7 @@ const leadership: TeamMember[] = [
   },
   {
     name: "Dr. Kabir Shomorin",
-    role: "Head of Programs & Projects",
+    role: "Head of Programs & Impacts",
     bio: "He is a seasoned dental surgeon, whom over the years as a healthcare provider in his field of expertise, had gained recognition. His background involvement in providing for the underserved populace has steered his motives to continuously render community's health education and workshops, collaborating with local government agencies and other NGOs. His belief in giving to the community has been the driving force behind his relentless humanitarian services. When he is not providing solutions to worries of mankind, he is busy travelling, hiking and seeking new adventures.",
   },
   {
