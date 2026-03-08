@@ -20,6 +20,7 @@ import {
   Users,
   LogOut,
   Home,
+  GraduationCap,
 } from "lucide-react";
 
 const navItems = [
