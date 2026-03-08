@@ -57,7 +57,7 @@ const leadership: TeamMember[] = [
     bio: "Solomon Olalemi is a visionary leader dedicated to nurturing a generation of better men in society. With over 5 years of experience as a Product Manager in the financial sector, Solomon has harnessed his innovative spirit to create impactful solutions that enhance lives. Currently serving as the Head of Digital Product at Polaris Bank, Nigeria, he continues to simplify financial activities for countless individuals.\n\nBeyond his professional achievements, Solomon is deeply passionate about health and wellness. He envisions a world where people thrive in both physical and spiritual well-being. Through his NGO work, Solomon channels his expertise in innovation and his commitment to healthy living, striving to create lasting positive change in communities across Nigeria.",
   },
   {
-    name: "Tolulope",
+    name: "Fabiyi Tolulope Ayobami",
     role: "Head of Operations",
   },
   {
