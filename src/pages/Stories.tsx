@@ -231,7 +231,7 @@ const Stories = () => {
           {/* Secondary CTA */}
           <motion.div {...fadeUp} transition={{ delay: 0.5 }} className="text-center mt-10">
             <a
-              href="https://youtube.com"
+              href="https://www.youtube.com/@SavingOurMen"
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center gap-2 border border-border text-foreground font-semibold text-sm py-2.5 px-6 rounded-full hover:border-primary/40 hover:text-primary transition-colors"
