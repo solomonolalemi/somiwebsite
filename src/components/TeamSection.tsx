@@ -73,6 +73,7 @@ const leadership: TeamMember[] = [
   {
     name: "Precious Opawoye",
     role: "Head of Media & Publicity",
+    image: teamPrecious,
     bio: "Precious Opawoye is the Head of Media and Publicity, specializing in strengthening the connection between the healthcare sector and the public. With a background in business development and research, she excels at creating strategic partnerships and promoting patient-centric healthcare solutions.\n\nHer passion for public health, cancer prevention, and women's health fuels her commitment to advancing initiatives that address critical health issues. She is dedicated to raising awareness and improving healthcare accessibility, ensuring that more people have access to the care they need. Precious is focused on using media and publicity to highlight transformative healthcare solutions that enhance patient outcomes and promote sustainable practices.",
   },
 ];
