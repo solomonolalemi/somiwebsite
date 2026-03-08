@@ -65,6 +65,21 @@ const pastEvents = [
 ];
 
 const Events = () => {
+  const [lightbox, setLightbox] = useState<{ eventIdx: number; photoIdx: number } | null>(null);
+
+  const openLightbox = (eventIdx: number) => setLightbox({ eventIdx, photoIdx: 0 });
+  const closeLightbox = () => setLightbox(null);
+
+  const currentGallery = lightbox ? pastEvents[lightbox.eventIdx].gallery : [];
+  const goNext = () => {
+    if (!lightbox) return;
+    setLightbox({ ...lightbox, photoIdx: (lightbox.photoIdx + 1) % currentGallery.length });
+  };
+  const goPrev = () => {
+    if (!lightbox) return;
+    setLightbox({ ...lightbox, photoIdx: (lightbox.photoIdx - 1 + currentGallery.length) % currentGallery.length });
+  };
+
   return (
     <div className="min-h-screen bg-background">
       <SomiHeader />
