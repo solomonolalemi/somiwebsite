@@ -13,6 +13,7 @@ import Events from "./pages/Events";
 import Donate from "./pages/Donate";
 import NotFound from "./pages/NotFound";
 import SomiChatbot from "./components/SomiChatbot";
+import NewsletterPopup from "./components/NewsletterPopup";
 
 const queryClient = new QueryClient();
 
