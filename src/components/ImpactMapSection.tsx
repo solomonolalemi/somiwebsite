@@ -85,20 +85,23 @@ const ImpactMapSection = () => {
         >
           <div className="relative bg-background/5 rounded-2xl border border-background/10 p-8 overflow-hidden">
             <svg
-              viewBox="0 0 100 100"
+              viewBox="0 0 800 800"
               className="w-full h-auto opacity-25"
               aria-label="Map of Nigeria showing Saving Our Men Initiative outreach locations"
             >
               <path
-                d="M20 25 L35 20 L50 22 L60 18 L70 22 L75 30 L78 40 L75 50 L72 55 L65 60 L58 65 L50 68 L42 70 L35 68 L28 65 L22 58 L18 50 L16 40 L18 32 Z"
-                fill="none"
+                d="M233 82 L258 78 L278 85 L305 75 L330 80 L355 72 L380 78 L410 70 L435 75 L460 68 L485 72 L510 65 L535 70 L555 62 L575 68 L590 60 L610 72 L625 80 L635 95 L640 110 L648 130 L655 150 L660 170 L658 190 L650 210 L645 230 L655 250 L665 270 L670 290 L668 310 L660 330 L650 345 L640 360 L625 375 L610 390 L600 410 L585 430 L570 445 L555 460 L540 478 L525 495 L510 510 L498 525 L485 540 L475 555 L468 570 L460 585 L455 600 L448 615 L440 625 L428 635 L415 640 L400 645 L385 650 L370 655 L355 658 L340 655 L325 648 L310 640 L295 630 L280 620 L268 608 L255 595 L245 580 L238 565 L230 548 L222 530 L215 515 L208 498 L200 480 L195 465 L188 448 L182 430 L178 415 L172 398 L168 380 L165 360 L162 340 L160 320 L158 300 L160 280 L165 260 L170 240 L178 220 L185 200 L192 180 L200 160 L208 140 L215 120 L222 102 L233 82 Z"
+                fill="hsl(160, 50%, 38%)"
+                fillOpacity="0.08"
                 stroke="hsl(160, 50%, 38%)"
-                strokeWidth="0.5"
+                strokeWidth="2"
                 opacity="0.6"
               />
-              <path d="M35 30 L45 45 L55 40" fill="none" stroke="hsl(160, 50%, 38%)" strokeWidth="0.2" opacity="0.3" />
-              <path d="M45 45 L40 55 L50 58" fill="none" stroke="hsl(160, 50%, 38%)" strokeWidth="0.2" opacity="0.3" />
-              <path d="M55 40 L60 50 L50 58" fill="none" stroke="hsl(160, 50%, 38%)" strokeWidth="0.2" opacity="0.3" />
+              {/* Internal state boundaries (simplified) */}
+              <path d="M200 300 L400 280 L600 310" fill="none" stroke="hsl(160, 50%, 38%)" strokeWidth="0.8" opacity="0.2" />
+              <path d="M220 400 L420 380 L580 420" fill="none" stroke="hsl(160, 50%, 38%)" strokeWidth="0.8" opacity="0.2" />
+              <path d="M350 150 L380 350 L400 550" fill="none" stroke="hsl(160, 50%, 38%)" strokeWidth="0.8" opacity="0.2" />
+              <path d="M500 150 L490 350 L470 520" fill="none" stroke="hsl(160, 50%, 38%)" strokeWidth="0.8" opacity="0.2" />
             </svg>
 
             {pins.map((pin) => (
