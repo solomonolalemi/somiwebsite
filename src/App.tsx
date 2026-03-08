@@ -11,6 +11,7 @@ import Stories from "./pages/Stories";
 import CorporatePartners from "./pages/CorporatePartners";
 import Events from "./pages/Events";
 import NotFound from "./pages/NotFound";
+import SomiChatbot from "./components/SomiChatbot";
 
 const queryClient = new QueryClient();
 
@@ -31,6 +32,7 @@ const App = () => (
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
         </Routes>
+        <SomiChatbot />
       </BrowserRouter>
     </TooltipProvider>
   </QueryClientProvider>
