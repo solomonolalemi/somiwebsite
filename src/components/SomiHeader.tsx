@@ -4,10 +4,10 @@ import somiLogo from "@/assets/somi-logo.png";
 
 const navLinks = [
   { label: "About Us", href: "/about" },
-  { label: "Our Impact", href: "#impact" },
-  { label: "Get Screened", href: "#screened" },
-  { label: "Stories", href: "#stories" },
-  { label: "Corporate Partners", href: "#action" },
+  { label: "Our Impact", href: "/impact" },
+  { label: "Get Screened", href: "/get-screened" },
+  { label: "Stories", href: "/stories" },
+  { label: "Corporate Partners", href: "/partners" },
 ];
 
 const SomiHeader = () => {
