@@ -2,6 +2,7 @@ import { motion } from "framer-motion";
 import { BookOpen, Cross, ShieldCheck } from "lucide-react";
 import SomiHeader from "@/components/SomiHeader";
 import SomiFooter from "@/components/SomiFooter";
+import TeamSection from "@/components/TeamSection";
 
 const fadeUp = {
   initial: { opacity: 0, y: 24 },
