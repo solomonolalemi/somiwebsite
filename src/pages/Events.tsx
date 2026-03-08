@@ -282,6 +282,71 @@ const Events = () => {
         </div>
       </section>
 
+      {/* Lightbox */}
+      <AnimatePresence>
+        {lightbox && (
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            className="fixed inset-0 z-50 bg-foreground/95 flex items-center justify-center"
+            onClick={closeLightbox}
+          >
+            {/* Close button */}
+            <button
+              onClick={closeLightbox}
+              className="absolute top-6 right-6 text-background/70 hover:text-background transition-colors z-10"
+            >
+              <X className="w-8 h-8" />
+            </button>
+
+            {/* Event info */}
+            <div className="absolute top-6 left-6 z-10">
+              <h3 className="text-background font-bold text-lg">{pastEvents[lightbox.eventIdx].caption}</h3>
+              <p className="text-background/50 text-sm">{pastEvents[lightbox.eventIdx].stat}</p>
+            </div>
+
+            {/* Navigation */}
+            <button
+              onClick={(e) => { e.stopPropagation(); goPrev(); }}
+              className="absolute left-4 sm:left-8 text-background/50 hover:text-background transition-colors z-10"
+            >
+              <ChevronLeft className="w-10 h-10" />
+            </button>
+            <button
+              onClick={(e) => { e.stopPropagation(); goNext(); }}
+              className="absolute right-4 sm:right-8 text-background/50 hover:text-background transition-colors z-10"
+            >
+              <ChevronRight className="w-10 h-10" />
+            </button>
+
+            {/* Image */}
+            <motion.img
+              key={`${lightbox.eventIdx}-${lightbox.photoIdx}`}
+              initial={{ opacity: 0, scale: 0.95 }}
+              animate={{ opacity: 1, scale: 1 }}
+              exit={{ opacity: 0, scale: 0.95 }}
+              transition={{ duration: 0.3 }}
+              src={currentGallery[lightbox.photoIdx]}
+              alt={`${pastEvents[lightbox.eventIdx].caption} - Photo ${lightbox.photoIdx + 1}`}
+              className="max-h-[80vh] max-w-[90vw] object-contain rounded-xl"
+              onClick={(e) => e.stopPropagation()}
+            />
+
+            {/* Dots */}
+            <div className="absolute bottom-8 flex gap-2">
+              {currentGallery.map((_, idx) => (
+                <button
+                  key={idx}
+                  onClick={(e) => { e.stopPropagation(); setLightbox({ ...lightbox, photoIdx: idx }); }}
+                  className={`w-2.5 h-2.5 rounded-full transition-all ${idx === lightbox.photoIdx ? "bg-primary scale-125" : "bg-background/30 hover:bg-background/50"}`}
+                />
+              ))}
+            </div>
+          </motion.div>
+        )}
+      </AnimatePresence>
+
       <SomiFooter />
     </div>
   );
