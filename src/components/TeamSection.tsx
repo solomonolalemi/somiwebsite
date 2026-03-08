@@ -1,5 +1,5 @@
-import { motion, AnimatePresence } from "framer-motion";
-import { User, X } from "lucide-react";
+import { motion } from "framer-motion";
+import { Linkedin, Twitter, Instagram } from "lucide-react";
 import { useState } from "react";
 import {
   Dialog,
