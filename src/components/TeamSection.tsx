@@ -213,6 +213,19 @@ const TeamSection = () => {
           ))}
         </div>
 
+        {/* Board of Trustees */}
+        <motion.h3
+          {...fadeUp}
+          className="text-xl font-bold text-foreground mb-6 text-center"
+        >
+          Board of Trustees
+        </motion.h3>
+        <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-4 mb-16 max-w-4xl mx-auto">
+          {boardOfTrustees.map((member, i) => (
+            <MemberCard key={member.name} member={member} index={i} onSelect={setSelected} />
+          ))}
+        </div>
+
         {/* Advisory Board */}
         <motion.h3
           {...fadeUp}
