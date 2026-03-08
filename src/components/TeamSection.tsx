@@ -98,6 +98,7 @@ const boardOfTrustees: TeamMember[] = [
   {
     name: "E.M Ademola-Bank Esq",
     role: "Board of Trustees",
+    image: teamAdemola,
   },
 ];
 
