@@ -18,7 +18,7 @@ const cards = [
     title: "Corporate Partnerships & CSR",
     text: "Sponsor a mobile screening event for a local community, or bring our medical team to your office for staff wellness.",
     cta: "Partner With Us",
-    href: "#partner",
+    href: "/partners",
     featured: false,
   },
   {
