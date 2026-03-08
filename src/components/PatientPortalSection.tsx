@@ -1,6 +1,6 @@
 import { motion } from "framer-motion";
 import { Calendar, MessageCircle } from "lucide-react";
-import screeningImage from "@/assets/screening-event.jpg";
+import screeningImage from "@/assets/somi-event-1.jpg";
 
 const PatientPortalSection = () => {
   return (

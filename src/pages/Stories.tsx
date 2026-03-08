@@ -5,6 +5,11 @@ import { Link } from "react-router-dom";
 import SomiHeader from "@/components/SomiHeader";
 import SomiFooter from "@/components/SomiFooter";
 import somiLogo from "@/assets/somi-logo.png";
+import somiEvent5 from "@/assets/somi-event-5.jpg";
+import somiEvent6 from "@/assets/somi-event-6.jpg";
+import somiEvent7 from "@/assets/somi-event-7.jpg";
+import somiEvent8 from "@/assets/somi-event-8.jpg";
+import somiEvent2 from "@/assets/somi-event-2.jpg";
 
 const fadeUp = {
   initial: { opacity: 0, y: 24 },
@@ -17,7 +22,7 @@ const impactStories = [
   {
     id: 1,
     category: "Community Impact",
-    image: "https://images.unsplash.com/photo-1576091160550-2173dba999ef?auto=format&fit=crop&w=800&q=80",
+    image: somiEvent5,
     title: "Over 400 Men Screened: The Ilesha Mass Outreach Highlight",
     description: "Watch how our medical team mobilized to bring early detection to Osun State, breaking down healthcare barriers in a single day.",
     hasVideo: true,
@@ -25,7 +30,7 @@ const impactStories = [
   {
     id: 2,
     category: "Human Story",
-    image: "https://images.unsplash.com/photo-1559757175-5700dde675bc?auto=format&fit=crop&w=800&q=80",
+    image: somiEvent6,
     title: "A Second Chance: How a 15-Minute Screening in Ajah Saved a Father's Life",
     description: "Hear directly from one of the 180+ men screened at our Ajah LCDA outreach about the importance of knowing your status.",
     hasVideo: true,
@@ -33,7 +38,7 @@ const impactStories = [
   {
     id: 3,
     category: "Digital Innovation",
-    image: "https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?auto=format&fit=crop&w=800&q=80",
+    image: somiEvent7,
     title: "Modernizing Outreach: How SOMI Uses Tech for Secure Health Data",
     description: "A look behind the scenes at our digital intake process, paving the way for our future dedicated health data center to track national prostate cancer trends.",
     hasVideo: false,
@@ -41,7 +46,7 @@ const impactStories = [
   {
     id: 4,
     category: "Government Partnership",
-    image: "https://images.unsplash.com/photo-1582213782179-e0d53f98f2ca?auto=format&fit=crop&w=800&q=80",
+    image: somiEvent8,
     title: "Partnering for Health: The Lekki LCDA 200-Man Screening Event",
     description: "See the power of collaboration as we partnered with local government to bring comprehensive men's wellness directly to the Lekki community.",
     hasVideo: true,
@@ -66,7 +71,7 @@ const Stories = () => {
       <section className="pt-32 pb-20 lg:pt-40 lg:pb-28 relative overflow-hidden">
         <div className="absolute inset-0">
           <img
-            src="https://images.unsplash.com/photo-1576091160550-2173dba999ef?auto=format&fit=crop&w=1920&q=80"
+            src={somiEvent2}
             alt="SOMI screening event"
             className="w-full h-full object-cover"
           />
