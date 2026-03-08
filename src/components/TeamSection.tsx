@@ -5,6 +5,8 @@ import teamDaniel from "@/assets/team-daniel.png";
 import teamKabir from "@/assets/team-kabir.png";
 import teamAdemola from "@/assets/team-ademola-bank.jpeg";
 import teamSolomon from "@/assets/team-solomon.png";
+import teamAyobami from "@/assets/team-ayobami.png";
+import teamPrecious from "@/assets/team-precious.png";
 import {
   Dialog,
   DialogContent,
