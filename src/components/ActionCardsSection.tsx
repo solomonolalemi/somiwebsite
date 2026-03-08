@@ -27,7 +27,7 @@ const cards = [
     title: "Start a Fundraiser",
     text: "Dedicate your birthday, a 10km run, or a full marathon to raising funds.",
     cta: "Start Campaign",
-    href: "#campaign",
+    href: "/donate",
     featured: false,
   },
   {
