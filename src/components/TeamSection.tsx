@@ -50,6 +50,7 @@ const leadership: TeamMember[] = [
   {
     name: "Daniel Ohida",
     role: "Head of Communication",
+    image: teamDaniel,
     bio: "Daniel Ohida is an astute filmmaker & photographer with a knack for storytelling. He spends most of his time leveling up in filmmaking; exploring the tenets of cinematography and video editing. He believes that in an ever-changing world of cutting-edge technology, one must always and constantly shift his creative paradigms to remain relevant and become a creative of the future. His enthusiasm lies with visual storytelling (filmmaking, photography & editing), and he constantly looks out for mediums that help him employ his interest as a tool for sociocultural development.",
   },
   {
