@@ -3,6 +3,7 @@ import { Toaster as Sonner } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
+import AdminPublications from "./pages/admin/AdminPublications";
 import Index from "./pages/Index";
 import AboutUs from "./pages/AboutUs";
 import OurImpact from "./pages/OurImpact";
@@ -49,6 +50,7 @@ const App = () => (
             <Route path="stories" element={<AdminStories />} />
             <Route path="stats" element={<AdminStats />} />
             <Route path="donations" element={<AdminDonations />} />
+            <Route path="publications" element={<AdminPublications />} />
             <Route path="users" element={<AdminUsers />} />
           </Route>
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
