@@ -30,7 +30,7 @@ const impactStories = [
   {
     id: 2,
     category: "Human Story",
-    image: "https://images.unsplash.com/photo-1559757175-5700dde675bc?auto=format&fit=crop&w=800&q=80",
+    image: somiEvent6,
     title: "A Second Chance: How a 15-Minute Screening in Ajah Saved a Father's Life",
     description: "Hear directly from one of the 180+ men screened at our Ajah LCDA outreach about the importance of knowing your status.",
     hasVideo: true,
