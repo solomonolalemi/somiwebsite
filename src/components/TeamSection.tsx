@@ -24,26 +24,22 @@ const leadership: TeamMember[] = [
   },
   {
     name: "Dr. Olaoye Jegede",
-    role: "Director of Volunteering",
+    role: "Head of Volunteering",
     bio: "A motivator and goal-oriented medical doctor, a strategic thinker with good sense of initiative and passion for service to humanity and leadership. He is an empathetic listener and empowerment advocate who believes that people can be anything they want to be as long as they have strong conviction and act in accordance with their faith.\n\nHe took many leadership roles as a student in the prestigious College of Medicine, University of Ibadan and continues to strive to live a life of impact and leave a lasting legacy that you can be the positive change in a world full of negativity, your background notwithstanding.",
   },
   {
     name: "Dr. Kabir Shomorin",
-    role: "Director of Programs & Projects",
+    role: "Head of Programs & Projects",
     bio: "He is a seasoned dental surgeon, whom over the years as a healthcare provider in his field of expertise, had gained recognition. His background involvement in providing for the underserved populace has steered his motives to continuously render community's health education and workshops, collaborating with local government agencies and other NGOs. His belief in giving to the community has been the driving force behind his relentless humanitarian services. When he is not providing solutions to worries of mankind, he is busy travelling, hiking and seeking new adventures.",
   },
   {
     name: "Dr. Favour Okoye",
-    role: "Director of Partnership & Fundraising",
+    role: "Head of Partnership & Fundraising",
     bio: "Dr. Favour Okoye is a dedicated China-trained physician who returned to Nigeria with a mission to contribute to his community's healthcare. Specializing in family medicine, hospice, and palliative care, he is a strong advocate for early cancer screening, timely diagnosis, and prompt treatment. Dr. Okoye's commitment to improving health outcomes reflects his passion for holistic patient care. Outside of his professional life, he enjoys traveling and staying active by playing both table and long tennis, making a balanced approach to life a core aspect of his philosophy.",
   },
   {
-    name: "Barr. Majekodunmi",
-    role: "Attorney",
-  },
-  {
     name: "Ayobami",
-    role: "Director of Research",
+    role: "Head of Research",
   },
   {
     name: "Oluwasegun Ariyo",
@@ -52,22 +48,49 @@ const leadership: TeamMember[] = [
   },
   {
     name: "Daniel Ohida",
-    role: "Director of Communication",
+    role: "Head of Communication",
     bio: "Daniel Ohida is an astute filmmaker & photographer with a knack for storytelling. He spends most of his time leveling up in filmmaking; exploring the tenets of cinematography and video editing. He believes that in an ever-changing world of cutting-edge technology, one must always and constantly shift his creative paradigms to remain relevant and become a creative of the future. His enthusiasm lies with visual storytelling (filmmaking, photography & editing), and he constantly looks out for mediums that help him employ his interest as a tool for sociocultural development.",
   },
   {
     name: "Solomon Olalemi",
-    role: "Director of Information Technology",
+    role: "Head of Information Technology",
     bio: "Solomon Olalemi is a visionary leader dedicated to nurturing a generation of better men in society. With over 5 years of experience as a Product Manager in the financial sector, Solomon has harnessed his innovative spirit to create impactful solutions that enhance lives. Currently serving as the Head of Digital Product at Polaris Bank, Nigeria, he continues to simplify financial activities for countless individuals.\n\nBeyond his professional achievements, Solomon is deeply passionate about health and wellness. He envisions a world where people thrive in both physical and spiritual well-being. Through his NGO work, Solomon channels his expertise in innovation and his commitment to healthy living, striving to create lasting positive change in communities across Nigeria.",
   },
   {
     name: "Tolulope",
-    role: "Director of Operations",
+    role: "Head of Operations",
   },
   {
     name: "Precious Opawoye",
-    role: "Director of Media & Publicity",
-    bio: "Precious Opawoye is the Director of Media and Publicity, specializing in strengthening the connection between the healthcare sector and the public. With a background in business development and research, she excels at creating strategic partnerships and promoting patient-centric healthcare solutions.\n\nHer passion for public health, cancer prevention, and women's health fuels her commitment to advancing initiatives that address critical health issues. She is dedicated to raising awareness and improving healthcare accessibility, ensuring that more people have access to the care they need. Precious is focused on using media and publicity to highlight transformative healthcare solutions that enhance patient outcomes and promote sustainable practices.",
+    role: "Head of Media & Publicity",
+    bio: "Precious Opawoye is the Head of Media and Publicity, specializing in strengthening the connection between the healthcare sector and the public. With a background in business development and research, she excels at creating strategic partnerships and promoting patient-centric healthcare solutions.\n\nHer passion for public health, cancer prevention, and women's health fuels her commitment to advancing initiatives that address critical health issues. She is dedicated to raising awareness and improving healthcare accessibility, ensuring that more people have access to the care they need. Precious is focused on using media and publicity to highlight transformative healthcare solutions that enhance patient outcomes and promote sustainable practices.",
+  },
+];
+
+const boardOfTrustees: TeamMember[] = [
+  {
+    name: "Dr. Moyinoluwa Akinwumi",
+    role: "Board of Trustees",
+    bio: "Dr. Moyinoluwa Akinwumi, fondly called Dr. MO, is the founder of the Saving Our Men Initiative. The first non-governmental organization (NGO) in Nigeria dedicated to prostate cancer awareness and screening. She has over 10 years of experience in community engagement and health workshops. A YALI (Young African Leader Initiative) alumnus and United People Global (UUPG) Leader. She works at a cancer center in Nigeria, where she passionately cares for thousands of patients. She is compassionate about cancer prevention, health equity, and advocacy. In her leisure time, she enjoys photography, capturing life moments through creative lenses.",
+  },
+  {
+    name: "Dr. Kabir Shomorin",
+    role: "Board of Trustees",
+    bio: "He is a seasoned dental surgeon, whom over the years as a healthcare provider in his field of expertise, had gained recognition. His background involvement in providing for the underserved populace has steered his motives to continuously render community's health education and workshops, collaborating with local government agencies and other NGOs. His belief in giving to the community has been the driving force behind his relentless humanitarian services. When he is not providing solutions to worries of mankind, he is busy travelling, hiking and seeking new adventures.",
+  },
+  {
+    name: "Oluwasegun Ariyo",
+    role: "Board of Trustees",
+    bio: "He is an accomplished software developer who holds a Master's degree in Cybersecurity Management and has a proven track record of delivering secure, high-quality software solutions. He has excelled in developing applications that meet stringent data protection and integrity standards. He has collaborated effectively with cross-functional teams, leveraging agile methodologies, test-driven development, and continuous integration to deliver successful projects in fast-paced environments. His technical acumen, coupled with a deep understanding of security principles, positions him to contribute to innovative and challenging projects that prioritize both performance and security.",
+  },
+  {
+    name: "Dr. Favour Okoye",
+    role: "Board of Trustees",
+    bio: "Dr. Favour Okoye is a dedicated China-trained physician who returned to Nigeria with a mission to contribute to his community's healthcare. Specializing in family medicine, hospice, and palliative care, he is a strong advocate for early cancer screening, timely diagnosis, and prompt treatment. Dr. Okoye's commitment to improving health outcomes reflects his passion for holistic patient care. Outside of his professional life, he enjoys traveling and staying active by playing both table and long tennis, making a balanced approach to life a core aspect of his philosophy.",
+  },
+  {
+    name: "Barr. Majekodunmi",
+    role: "Board of Trustees",
   },
 ];
 
@@ -186,6 +209,19 @@ const TeamSection = () => {
         </motion.h3>
         <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-4 mb-16 max-w-5xl mx-auto">
           {leadership.map((member, i) => (
+            <MemberCard key={member.name} member={member} index={i} onSelect={setSelected} />
+          ))}
+        </div>
+
+        {/* Board of Trustees */}
+        <motion.h3
+          {...fadeUp}
+          className="text-xl font-bold text-foreground mb-6 text-center"
+        >
+          Board of Trustees
+        </motion.h3>
+        <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-4 mb-16 max-w-4xl mx-auto">
+          {boardOfTrustees.map((member, i) => (
             <MemberCard key={member.name} member={member} index={i} onSelect={setSelected} />
           ))}
         </div>
