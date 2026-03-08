@@ -68,6 +68,7 @@ const leadership: TeamMember[] = [
   {
     name: "Fabiyi Tolulope Ayobami",
     role: "Head of Operations",
+    image: teamAyobami,
   },
   {
     name: "Precious Opawoye",
