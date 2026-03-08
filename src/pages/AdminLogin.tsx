@@ -16,11 +16,14 @@ const AdminLogin = () => {
     const checkSession = async () => {
       const { data: { session } } = await supabase.auth.getSession();
       if (session) {
-        const { data } = await supabase.rpc("has_role", {
+        const { data: isAdmin } = await supabase.rpc("has_role", {
           _user_id: session.user.id,
           _role: "admin",
         });
-        if (data) navigate("/admin/blog");
+        const { data: isSA } = await supabase.rpc("is_superadmin", {
+          _user_id: session.user.id,
+        });
+        if (isAdmin || isSA) navigate("/admin/dashboard");
       }
     };
     checkSession();
