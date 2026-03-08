@@ -29,7 +29,7 @@ const leadership: TeamMember[] = [
   },
   {
     name: "Dr. Kabir Shomorin",
-    role: "Head of Programs & Projects",
+    role: "Head of Programs & Impacts",
     bio: "He is a seasoned dental surgeon, whom over the years as a healthcare provider in his field of expertise, had gained recognition. His background involvement in providing for the underserved populace has steered his motives to continuously render community's health education and workshops, collaborating with local government agencies and other NGOs. His belief in giving to the community has been the driving force behind his relentless humanitarian services. When he is not providing solutions to worries of mankind, he is busy travelling, hiking and seeking new adventures.",
   },
   {
@@ -99,11 +99,6 @@ const advisoryBoard: TeamMember[] = [
     name: "Engr. Joanna Olu Maduka",
     role: "Advisory Member",
     bio: "Engr Mrs. Maduka is recognized for her distinguished and unique professional accomplishments. She had her first degree at University of Ife (now OAU) and MSc degree from Trinity College, Dublin. The first female elected member, then fellow of the Nigerian Society of Engineers (MNSE, FNSE), first female registered by Council of the Regulation of Engineers in Nigeria (COREN). She founded Association of Professional Women Engineers, APWEN.\n\nShe is an honorary fellow of the Nigerian Institute of Science and Technology, Yaba. A principal partner in a foremost electrical engineering consulting firm, LECCOM Associates, engaged in the design and supervision of several construction projects all over Nigeria, including the new Nigerian capital, Abuja. Former member of the United Nations Advisory Board on Science and Technology for Development. She founded the Friends of the Environment (FOTE). She was conferred with the Nigerian National Honor, MFR.",
-  },
-  {
-    name: "Mrs. Emem Iyoho",
-    role: "Advisory Member",
-    bio: "She is a seasoned trainer and public administrator with a deep commitment to advancing public health. With over 17 years of experience in the public sector, she has developed a reputation for fostering innovative solutions, implementing policy changes, and delivering impactful training programs in her organization. As a team player, she brings a wealth of expertise in areas such as health systems strengthening, leadership development, capacity building and training for healthcare professionals and public institutions.\n\nShe continuously strives to empower individuals and organizations to achieve excellence in public health management and administration, contributing to healthier, more resilient communities and organizations. Her commitment to giving back to the community is a result of her expertise in initiatives that promote public health and administration.",
   },
   {
     name: "Engr. Vincent Maduka",
