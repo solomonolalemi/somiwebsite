@@ -71,7 +71,7 @@ const Stories = () => {
       <section className="pt-32 pb-20 lg:pt-40 lg:pb-28 relative overflow-hidden">
         <div className="absolute inset-0">
           <img
-            src="https://images.unsplash.com/photo-1576091160550-2173dba999ef?auto=format&fit=crop&w=1920&q=80"
+            src={somiEvent2}
             alt="SOMI screening event"
             className="w-full h-full object-cover"
           />
