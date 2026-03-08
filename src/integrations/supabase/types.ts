@@ -53,6 +53,168 @@ export type Database = {
         }
         Relationships: []
       }
+      donation_records: {
+        Row: {
+          amount: number
+          created_at: string
+          currency: string
+          donation_type: string
+          donor_name: string | null
+          id: string
+          notes: string | null
+          recorded_at: string
+        }
+        Insert: {
+          amount: number
+          created_at?: string
+          currency?: string
+          donation_type?: string
+          donor_name?: string | null
+          id?: string
+          notes?: string | null
+          recorded_at?: string
+        }
+        Update: {
+          amount?: number
+          created_at?: string
+          currency?: string
+          donation_type?: string
+          donor_name?: string | null
+          id?: string
+          notes?: string | null
+          recorded_at?: string
+        }
+        Relationships: []
+      }
+      events: {
+        Row: {
+          cover_image_url: string | null
+          created_at: string
+          date: string
+          description: string | null
+          display_order: number
+          gallery_urls: string[] | null
+          id: string
+          is_upcoming: boolean
+          location: string
+          pre_register_open: boolean
+          stat: string | null
+          time: string | null
+          title: string
+          updated_at: string
+        }
+        Insert: {
+          cover_image_url?: string | null
+          created_at?: string
+          date: string
+          description?: string | null
+          display_order?: number
+          gallery_urls?: string[] | null
+          id?: string
+          is_upcoming?: boolean
+          location: string
+          pre_register_open?: boolean
+          stat?: string | null
+          time?: string | null
+          title: string
+          updated_at?: string
+        }
+        Update: {
+          cover_image_url?: string | null
+          created_at?: string
+          date?: string
+          description?: string | null
+          display_order?: number
+          gallery_urls?: string[] | null
+          id?: string
+          is_upcoming?: boolean
+          location?: string
+          pre_register_open?: boolean
+          stat?: string | null
+          time?: string | null
+          title?: string
+          updated_at?: string
+        }
+        Relationships: []
+      }
+      impact_stats: {
+        Row: {
+          created_at: string
+          display_order: number
+          icon: string | null
+          id: string
+          label: string
+          section: string
+          suffix: string | null
+          updated_at: string
+          value: number
+        }
+        Insert: {
+          created_at?: string
+          display_order?: number
+          icon?: string | null
+          id?: string
+          label: string
+          section?: string
+          suffix?: string | null
+          updated_at?: string
+          value?: number
+        }
+        Update: {
+          created_at?: string
+          display_order?: number
+          icon?: string | null
+          id?: string
+          label?: string
+          section?: string
+          suffix?: string | null
+          updated_at?: string
+          value?: number
+        }
+        Relationships: []
+      }
+      impact_stories: {
+        Row: {
+          category: string
+          created_at: string
+          description: string | null
+          display_order: number
+          has_video: boolean
+          id: string
+          image_url: string | null
+          published: boolean
+          title: string
+          updated_at: string
+          video_url: string | null
+        }
+        Insert: {
+          category?: string
+          created_at?: string
+          description?: string | null
+          display_order?: number
+          has_video?: boolean
+          id?: string
+          image_url?: string | null
+          published?: boolean
+          title: string
+          updated_at?: string
+          video_url?: string | null
+        }
+        Update: {
+          category?: string
+          created_at?: string
+          description?: string | null
+          display_order?: number
+          has_video?: boolean
+          id?: string
+          image_url?: string | null
+          published?: boolean
+          title?: string
+          updated_at?: string
+          video_url?: string | null
+        }
+        Relationships: []
+      }
       newsletter_subscribers: {
         Row: {
           email: string
@@ -104,6 +266,7 @@ export type Database = {
         }
         Returns: boolean
       }
+      is_superadmin: { Args: { _user_id: string }; Returns: boolean }
     }
     Enums: {
       app_role: "admin" | "user" | "superadmin"
