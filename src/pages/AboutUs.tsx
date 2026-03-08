@@ -105,7 +105,7 @@ const AboutUs = () => {
         <div className="container mx-auto px-4 lg:px-8">
           <motion.h2
             {...fadeUp}
-            className="text-3xl sm:text-4xl font-bold text-foreground mb-12 text-center"
+            className="text-3xl sm:text-4xl font-bold text-foreground mb-14 text-center"
           >
             What We Exist to Accomplish
           </motion.h2>
@@ -113,16 +113,37 @@ const AboutUs = () => {
             {missionBlocks.map((block, i) => (
               <motion.div
                 key={block.title}
-                {...fadeUp}
-                transition={{ delay: i * 0.1, duration: 0.5 }}
-                className="bg-background rounded-2xl border border-border p-8"
+                initial={{ opacity: 0, y: 24 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: i * 0.12, duration: 0.5 }}
+                whileHover={{ y: -8, scale: 1.02 }}
+                className="group relative bg-background rounded-2xl border border-border p-8 cursor-pointer overflow-hidden transition-shadow duration-500 hover:shadow-[0_20px_60px_-12px_hsl(160_50%_38%/0.15)] hover:border-primary/40"
               >
-                <h3 className="text-xl font-bold text-foreground mb-4">
+                {/* Gradient accent bar */}
+                <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-primary to-primary/40 origin-left scale-x-0 group-hover:scale-x-100 transition-transform duration-500" />
+
+                {/* Step number */}
+                <div className="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center mb-6 group-hover:bg-primary group-hover:text-primary-foreground transition-colors duration-400">
+                  <span className="text-sm font-bold text-primary group-hover:text-primary-foreground transition-colors duration-400">
+                    0{i + 1}
+                  </span>
+                </div>
+
+                <h3 className="text-xl font-bold text-foreground mb-4 group-hover:text-primary transition-colors duration-300">
                   {block.title}
                 </h3>
                 <p className="text-muted-foreground leading-relaxed">
                   {block.text}
                 </p>
+
+                {/* Arrow indicator */}
+                <div className="mt-6 flex items-center gap-2 text-primary opacity-0 group-hover:opacity-100 translate-x-[-8px] group-hover:translate-x-0 transition-all duration-400">
+                  <span className="text-sm font-semibold">Learn more</span>
+                  <svg width="16" height="16" viewBox="0 0 16 16" fill="none" className="stroke-current">
+                    <path d="M3 8h10M9 4l4 4-4 4" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
+                  </svg>
+                </div>
               </motion.div>
             ))}
           </div>
