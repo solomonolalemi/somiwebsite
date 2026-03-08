@@ -17,7 +17,7 @@ const Index = () => {
         <ImpactMapSection />
         <ActionCardsSection />
         <PatientPortalSection />
-        <TeamSection />
+        
       </main>
       <SomiFooter />
     </div>
