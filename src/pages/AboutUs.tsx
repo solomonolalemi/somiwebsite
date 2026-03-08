@@ -93,8 +93,8 @@ const AboutUs = () => {
             transition={{ delay: 0.1, duration: 0.5 }}
             className="text-muted-foreground text-lg leading-relaxed"
           >
-            We are here to ensure that every man—regardless of his
-            background—has access to the necessary resources for prevention,
+            We are here to ensure that every man regardless of his
+            background has access to the necessary resources for prevention,
             early detection, and effective treatment. Our goal is to empower men
             to take control of their health and live fuller, healthier lives.
           </motion.p>
