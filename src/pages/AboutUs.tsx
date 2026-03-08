@@ -186,7 +186,10 @@ const AboutUs = () => {
         </div>
       </section>
 
-      {/* Section 5: CTA */}
+      {/* Section 5: Meet the Team */}
+      <TeamSection />
+
+      {/* Section 6: CTA */}
       <section className="py-20 lg:py-28 bg-primary">
         <div className="container mx-auto px-4 lg:px-8 max-w-3xl text-center">
           <motion.h2
