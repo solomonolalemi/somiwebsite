@@ -12,6 +12,8 @@ import CorporatePartners from "./pages/CorporatePartners";
 import Events from "./pages/Events";
 import Donate from "./pages/Donate";
 import NotFound from "./pages/NotFound";
+import AdminLogin from "./pages/AdminLogin";
+import AdminBlog from "./pages/AdminBlog";
 import SomiChatbot from "./components/SomiChatbot";
 import NewsletterPopup from "./components/NewsletterPopup";
 
