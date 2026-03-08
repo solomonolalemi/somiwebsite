@@ -13,6 +13,7 @@ interface TeamMember {
   name: string;
   role: string;
   bio?: string;
+  image?: string;
 }
 
 const leadership: TeamMember[] = [
@@ -110,11 +111,19 @@ const MemberCard = ({
     {/* Top accent */}
     <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-primary to-primary/40 origin-left scale-x-0 group-hover:scale-x-100 transition-transform duration-500" />
 
-    <div className="inline-flex items-center justify-center w-16 h-16 rounded-full bg-primary/10 mb-4 group-hover:bg-primary transition-colors duration-400">
-      <span className="text-lg font-bold text-primary group-hover:text-primary-foreground transition-colors duration-400">
-        {getInitials(member.name)}
-      </span>
-    </div>
+    {member.image ? (
+      <img
+        src={member.image}
+        alt={member.name}
+        className="w-16 h-16 rounded-full object-cover mb-4 ring-2 ring-transparent group-hover:ring-primary transition-all duration-400"
+      />
+    ) : (
+      <div className="inline-flex items-center justify-center w-16 h-16 rounded-full bg-primary/10 mb-4 group-hover:bg-primary transition-colors duration-400">
+        <span className="text-lg font-bold text-primary group-hover:text-primary-foreground transition-colors duration-400">
+          {getInitials(member.name)}
+        </span>
+      </div>
+    )}
 
     <h3 className="text-sm font-bold text-foreground mb-1 group-hover:text-primary transition-colors duration-300">
       {member.name}
@@ -181,11 +190,19 @@ const TeamSection = () => {
         <DialogContent className="sm:max-w-lg">
           <DialogHeader>
             <div className="flex items-center gap-4 mb-2">
-              <div className="inline-flex items-center justify-center w-14 h-14 rounded-full bg-primary/10">
-                <span className="text-lg font-bold text-primary">
-                  {selected ? getInitials(selected.name) : ""}
-                </span>
-              </div>
+              {selected?.image ? (
+                <img
+                  src={selected.image}
+                  alt={selected?.name}
+                  className="w-14 h-14 rounded-full object-cover"
+                />
+              ) : (
+                <div className="inline-flex items-center justify-center w-14 h-14 rounded-full bg-primary/10">
+                  <span className="text-lg font-bold text-primary">
+                    {selected ? getInitials(selected.name) : ""}
+                  </span>
+                </div>
+              )}
               <div>
                 <DialogTitle className="text-lg">{selected?.name}</DialogTitle>
                 <p className="text-sm text-muted-foreground">{selected?.role}</p>
