@@ -114,7 +114,7 @@ const Stories = () => {
           </motion.p>
           <motion.div {...fadeUp} transition={{ delay: 0.3, duration: 0.5 }} className="flex flex-wrap justify-center gap-3">
             <a
-              href="https://youtube.com"
+              href="https://www.youtube.com/@SavingOurMen"
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center gap-2 bg-primary text-primary-foreground font-semibold py-3 px-7 rounded-full hover:opacity-90 transition-opacity text-sm"
