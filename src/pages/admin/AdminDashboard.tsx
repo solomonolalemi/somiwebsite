@@ -31,6 +31,7 @@ const AdminDashboard = () => {
         { label: "Impact Stories", count: stories.count || 0, icon: BookOpen, href: "/admin/stories", color: "bg-amber-500/10 text-amber-500" },
         { label: "Impact Stats", count: stats.count || 0, icon: BarChart3, href: "/admin/stats", color: "bg-violet-500/10 text-violet-500" },
         { label: "Donations", count: donations.count || 0, icon: DollarSign, href: "/admin/donations", color: "bg-emerald-500/10 text-emerald-500" },
+        { label: "Subscribers", count: subs.count || 0, icon: Mail, href: "/admin/subscribers", color: "bg-pink-500/10 text-pink-500" },
       ]);
     };
     fetchCounts();
