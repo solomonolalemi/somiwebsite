@@ -16,12 +16,13 @@ const AdminDashboard = () => {
 
   useEffect(() => {
     const fetchCounts = async () => {
-      const [blogs, events, stories, stats, donations] = await Promise.all([
+      const [blogs, events, stories, stats, donations, subs] = await Promise.all([
         supabase.from("blog_posts").select("id", { count: "exact", head: true }),
         supabase.from("events").select("id", { count: "exact", head: true }),
         supabase.from("impact_stories").select("id", { count: "exact", head: true }),
         supabase.from("impact_stats").select("id", { count: "exact", head: true }),
         supabase.from("donation_records").select("id", { count: "exact", head: true }),
+        supabase.from("newsletter_subscribers").select("id", { count: "exact", head: true }),
       ]);
 
       setCounts([
