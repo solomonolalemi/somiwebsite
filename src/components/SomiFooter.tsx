@@ -100,8 +100,21 @@ const SomiFooter = () => {
               Join our newsletter for outreach updates and impact stories.
             </p>
             <form
-              onSubmit={(e) => {
+              onSubmit={async (e) => {
                 e.preventDefault();
+                if (!email.trim()) return;
+                setLoading(true);
+                const { error } = await supabase
+                  .from("newsletter_subscribers")
+                  .insert({ name: "Newsletter Subscriber", email: email.trim().toLowerCase() });
+                setLoading(false);
+                if (error?.code === "23505") {
+                  toast({ title: "You're already subscribed!", description: "Thank you for your continued support." });
+                } else if (error) {
+                  toast({ title: "Something went wrong", description: "Please try again later.", variant: "destructive" });
+                } else {
+                  toast({ title: "Welcome aboard! 🎉", description: "You've joined the fight against prostate cancer." });
+                }
                 setEmail("");
               }}
               className="flex gap-2"
