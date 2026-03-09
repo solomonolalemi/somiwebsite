@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { supabase } from "@/integrations/supabase/client";
-import { FileText, Calendar, BookOpen, BarChart3, DollarSign } from "lucide-react";
+import { FileText, Calendar, BookOpen, BarChart3, DollarSign, Mail } from "lucide-react";
 import { Link } from "react-router-dom";
 
 interface CountItem {
