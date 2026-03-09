@@ -130,8 +130,8 @@ const SomiFooter = () => {
                   required
                 />
               </div>
-              <button type="submit" className="somi-btn-gold text-sm py-2.5 px-5">
-                Sign Up
+              <button type="submit" disabled={loading} className="somi-btn-gold text-sm py-2.5 px-5 disabled:opacity-50">
+                {loading ? "..." : "Sign Up"}
               </button>
             </form>
           </div>
