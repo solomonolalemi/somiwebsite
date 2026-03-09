@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { motion } from "framer-motion";
 import { Users, Building2, Heart } from "lucide-react";
-import NigeriaMapInteractive from "@/components/NigeriaMapInteractive";
+import InteractiveMap from "@/components/InteractiveMap";
 
 const metrics = [
   { icon: Users, label: "Total Men Screened", value: "780+" },
