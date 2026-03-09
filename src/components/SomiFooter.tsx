@@ -22,6 +22,8 @@ const legalLinks = [
 
 const SomiFooter = () => {
   const [email, setEmail] = useState("");
+  const [loading, setLoading] = useState(false);
+  const { toast } = useToast();
 
   return (
     <footer className="bg-foreground py-16 border-t border-background/10">
