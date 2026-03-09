@@ -21,6 +21,7 @@ import {
   LogOut,
   Home,
   GraduationCap,
+  Mail,
 } from "lucide-react";
 
 const navItems = [
