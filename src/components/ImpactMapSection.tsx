@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { motion } from "framer-motion";
 import { Users, Building2, Heart } from "lucide-react";
-import NigeriaMapInteractive from "@/components/NigeriaMapInteractive";
+import InteractiveMap from "@/components/InteractiveMap";
 
 const metrics = [
   { icon: Users, label: "Total Men Screened", value: "780+" },
@@ -10,9 +10,9 @@ const metrics = [
 ];
 
 const pins = [
-  { id: 1, state: "Osun State", title: "Ilesha Outreach (Feb 2025)", detail: "400+ Men Screened", x: 26, y: 68 },
-  { id: 2, state: "Lagos State", title: "Lekki LCDA Outreach (Dec 2025)", detail: "200+ Men Screened", x: 16, y: 80 },
-  { id: 3, state: "Lagos State", title: "Ajah LCDA Outreach (Feb 2026)", detail: "180+ Men Screened", x: 19, y: 82 },
+  { id: 1, state: "Osun State", title: "Ilesha Outreach", detail: "400+", lat: 7.6167, lng: 4.7333, date: "February 2025" },
+  { id: 2, state: "Lagos State", title: "Lekki LCDA Outreach", detail: "200+", lat: 6.4698, lng: 3.5852, date: "December 2025" },
+  { id: 3, state: "Lagos State", title: "Ajah LCDA Outreach", detail: "180+", lat: 6.4667, lng: 3.6167, date: "February 2026" },
 ];
 
 const ImpactMapSection = () => {
@@ -61,7 +61,7 @@ const ImpactMapSection = () => {
           transition={{ duration: 0.6 }}
           className="max-w-3xl mx-auto"
         >
-          <NigeriaMapInteractive pins={pins} variant="dark" />
+          <InteractiveMap pins={pins} variant="dark" />
         </motion.div>
       </div>
     </section>
