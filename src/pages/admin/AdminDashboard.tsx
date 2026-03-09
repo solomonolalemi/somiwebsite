@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { supabase } from "@/integrations/supabase/client";
-import { FileText, Calendar, BookOpen, BarChart3, DollarSign } from "lucide-react";
+import { FileText, Calendar, BookOpen, BarChart3, DollarSign, Mail } from "lucide-react";
 import { Link } from "react-router-dom";
 
 interface CountItem {
@@ -16,12 +16,13 @@ const AdminDashboard = () => {
 
   useEffect(() => {
     const fetchCounts = async () => {
-      const [blogs, events, stories, stats, donations] = await Promise.all([
+      const [blogs, events, stories, stats, donations, subs] = await Promise.all([
         supabase.from("blog_posts").select("id", { count: "exact", head: true }),
         supabase.from("events").select("id", { count: "exact", head: true }),
         supabase.from("impact_stories").select("id", { count: "exact", head: true }),
         supabase.from("impact_stats").select("id", { count: "exact", head: true }),
         supabase.from("donation_records").select("id", { count: "exact", head: true }),
+        supabase.from("newsletter_subscribers").select("id", { count: "exact", head: true }),
       ]);
 
       setCounts([
@@ -30,6 +31,7 @@ const AdminDashboard = () => {
         { label: "Impact Stories", count: stories.count || 0, icon: BookOpen, href: "/admin/stories", color: "bg-amber-500/10 text-amber-500" },
         { label: "Impact Stats", count: stats.count || 0, icon: BarChart3, href: "/admin/stats", color: "bg-violet-500/10 text-violet-500" },
         { label: "Donations", count: donations.count || 0, icon: DollarSign, href: "/admin/donations", color: "bg-emerald-500/10 text-emerald-500" },
+        { label: "Subscribers", count: subs.count || 0, icon: Mail, href: "/admin/subscribers", color: "bg-pink-500/10 text-pink-500" },
       ]);
     };
     fetchCounts();
@@ -64,6 +66,7 @@ const AdminDashboard = () => {
           <li><span className="font-semibold text-foreground">Impact Stories</span> → Stories page → Media grid with play buttons</li>
           <li><span className="font-semibold text-foreground">Impact Statistics</span> → Our Impact page → Animated counters at top</li>
           <li><span className="font-semibold text-foreground">Donations</span> → Internal tracking only (not shown publicly)</li>
+          <li><span className="font-semibold text-foreground">Subscribers</span> → Newsletter sign-ups from popup & footer</li>
         </ul>
       </div>
     </div>

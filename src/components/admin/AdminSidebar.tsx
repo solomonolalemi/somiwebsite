@@ -21,6 +21,7 @@ import {
   LogOut,
   Home,
   GraduationCap,
+  Mail,
 } from "lucide-react";
 
 const navItems = [
@@ -31,6 +32,7 @@ const navItems = [
   { title: "Impact Statistics", url: "/admin/stats", icon: BarChart3, hint: "Appears on: Our Impact page → Counters" },
   { title: "Publications", url: "/admin/publications", icon: GraduationCap, hint: "Appears on: Homepage → Research section" },
   { title: "Donations", url: "/admin/donations", icon: DollarSign, hint: "Internal records tracking" },
+  { title: "Subscribers", url: "/admin/subscribers", icon: Mail, hint: "Newsletter sign-ups" },
 ];
 
 const AdminSidebar = ({ isSuperadmin }: { isSuperadmin: boolean }) => {

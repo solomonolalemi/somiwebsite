@@ -1,6 +1,8 @@
 import { Mail } from "lucide-react";
 import { useState } from "react";
 import { Link } from "react-router-dom";
+import { supabase } from "@/integrations/supabase/client";
+import { useToast } from "@/hooks/use-toast";
 
 const quickLinks = [
   { label: "Home", href: "/" },
@@ -20,6 +22,8 @@ const legalLinks = [
 
 const SomiFooter = () => {
   const [email, setEmail] = useState("");
+  const [loading, setLoading] = useState(false);
+  const { toast } = useToast();
 
   return (
     <footer className="bg-foreground py-16 border-t border-background/10">
@@ -96,8 +100,21 @@ const SomiFooter = () => {
               Join our newsletter for outreach updates and impact stories.
             </p>
             <form
-              onSubmit={(e) => {
+              onSubmit={async (e) => {
                 e.preventDefault();
+                if (!email.trim()) return;
+                setLoading(true);
+                const { error } = await supabase
+                  .from("newsletter_subscribers")
+                  .insert({ name: "Newsletter Subscriber", email: email.trim().toLowerCase() });
+                setLoading(false);
+                if (error?.code === "23505") {
+                  toast({ title: "You're already subscribed!", description: "Thank you for your continued support." });
+                } else if (error) {
+                  toast({ title: "Something went wrong", description: "Please try again later.", variant: "destructive" });
+                } else {
+                  toast({ title: "Welcome aboard! 🎉", description: "You've joined the fight against prostate cancer." });
+                }
                 setEmail("");
               }}
               className="flex gap-2"
@@ -113,8 +130,8 @@ const SomiFooter = () => {
                   required
                 />
               </div>
-              <button type="submit" className="somi-btn-gold text-sm py-2.5 px-5">
-                Sign Up
+              <button type="submit" disabled={loading} className="somi-btn-gold text-sm py-2.5 px-5 disabled:opacity-50">
+                {loading ? "..." : "Sign Up"}
               </button>
             </form>
           </div>
