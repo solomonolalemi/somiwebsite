@@ -61,7 +61,7 @@ const ImpactMapSection = () => {
           transition={{ duration: 0.6 }}
           className="max-w-3xl mx-auto"
         >
-          <NigeriaMapInteractive pins={pins} variant="dark" />
+          <InteractiveMap pins={pins} variant="dark" />
         </motion.div>
       </div>
     </section>
