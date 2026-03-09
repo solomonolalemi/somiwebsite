@@ -22,6 +22,7 @@ import AdminStories from "./pages/admin/AdminStories";
 import AdminStats from "./pages/admin/AdminStats";
 import AdminDonations from "./pages/admin/AdminDonations";
 import AdminUsers from "./pages/admin/AdminUsers";
+import AdminSubscribers from "./pages/admin/AdminSubscribers";
 import SomiChatbot from "./components/SomiChatbot";
 import NewsletterPopup from "./components/NewsletterPopup";
 
