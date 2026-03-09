@@ -2,7 +2,7 @@ import { useEffect, useRef, useState } from "react";
 import { motion } from "framer-motion";
 import { Users, Building2, Heart, Tablet, ShieldCheck, Lock } from "lucide-react";
 import { PieChart, Pie, Cell, ResponsiveContainer, Tooltip } from "recharts";
-import NigeriaMapInteractive from "@/components/NigeriaMapInteractive";
+import InteractiveMap from "@/components/InteractiveMap";
 import SomiHeader from "@/components/SomiHeader";
 import SomiFooter from "@/components/SomiFooter";
 
