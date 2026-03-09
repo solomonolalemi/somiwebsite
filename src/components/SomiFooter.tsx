@@ -1,6 +1,8 @@
 import { Mail } from "lucide-react";
 import { useState } from "react";
 import { Link } from "react-router-dom";
+import { supabase } from "@/integrations/supabase/client";
+import { useToast } from "@/hooks/use-toast";
 
 const quickLinks = [
   { label: "Home", href: "/" },
