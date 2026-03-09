@@ -66,6 +66,7 @@ const AdminDashboard = () => {
           <li><span className="font-semibold text-foreground">Impact Stories</span> → Stories page → Media grid with play buttons</li>
           <li><span className="font-semibold text-foreground">Impact Statistics</span> → Our Impact page → Animated counters at top</li>
           <li><span className="font-semibold text-foreground">Donations</span> → Internal tracking only (not shown publicly)</li>
+          <li><span className="font-semibold text-foreground">Subscribers</span> → Newsletter sign-ups from popup & footer</li>
         </ul>
       </div>
     </div>
