@@ -8,10 +8,14 @@ export default defineConfig(({ mode }) => ({
   server: {
     host: "::",
     port: 8080,
-    allowedHosts: ["*.vercel.run"],
+    allowedHosts: "all",
     hmr: {
+      protocol: "ws",
+      host: undefined,
+      port: undefined,
       overlay: false,
     },
+    middlewareMode: false,
   },
   plugins: [react(), mode === "development" && componentTagger()].filter(Boolean),
   resolve: {
