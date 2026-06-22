@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { Menu, X } from "lucide-react";
-import somiLogo from "@/assets/somi-logo.png";
+import somiLogo from "@/assets/somi-logo.svg";
 
 const navLinks = [
   { label: "About Us", href: "/about" },
