@@ -17,13 +17,12 @@ const SomiHeader = () => {
   return (
     <header className="fixed top-0 left-0 right-0 z-50 bg-background/80 backdrop-blur-lg border-b border-border">
       <div className="container mx-auto flex items-center justify-between py-3 px-4 lg:px-8">
-        <a href="#" className="flex items-center gap-2">
+        <a href="#" className="flex items-center">
           <img
             src={somiLogo}
             alt="Saving Our Men Initiative logo"
-            className="h-8 w-auto"
+            className="h-10 w-auto"
           />
-          <span className="font-semibold text-lg text-foreground tracking-tight">SOMI</span>
         </a>
 
         <nav className="hidden lg:flex items-center gap-8">

@@ -20,7 +20,7 @@ const ImpactMapSection = () => {
   return (
     <section id="impact" className="relative py-20 lg:py-28 bg-foreground overflow-hidden">
       {/* Pattern Background */}
-      <div className="absolute inset-0 opacity-5 pointer-events-none">
+      <div className="absolute inset-0 opacity-15 pointer-events-none">
         <img 
           src={patternSvg} 
           alt="" 

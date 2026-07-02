@@ -51,7 +51,7 @@ const ActionCardsSection = () => {
   return (
     <section id="action" className="relative py-20 lg:py-28 bg-background overflow-hidden">
       {/* Pattern Background */}
-      <div className="absolute inset-0 opacity-5 pointer-events-none">
+      <div className="absolute inset-0 opacity-15 pointer-events-none">
         <img 
           src={patternSvg} 
           alt="" 
