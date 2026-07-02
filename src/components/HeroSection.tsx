@@ -1,11 +1,21 @@
 import { motion } from "framer-motion";
 import heroImage from "@/assets/somi-event-10.jpg";
+import patternSvg from "@/assets/pattern-outline.svg";
 
 const HeroSection = () => {
   return (
     <section className="relative bg-background pt-28 pb-16 lg:pt-36 lg:pb-24 overflow-hidden">
-      <div className="container mx-auto px-4 lg:px-8">
-        <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+      {/* Pattern Background */}
+      <div className="absolute inset-0 opacity-5 pointer-events-none">
+        <img 
+          src={patternSvg} 
+          alt="" 
+          className="w-full h-full object-cover"
+          aria-hidden="true"
+        />
+      </div>
+      <div className="container mx-auto px-4 lg:px-8 relative z-10">
+        <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center relative z-20">
           {/* Left: Copy */}
           <motion.div
             initial={{ opacity: 0, y: 30 }}
