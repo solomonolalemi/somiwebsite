@@ -8,7 +8,7 @@ export default defineConfig(({ mode }) => ({
   server: {
     host: "::",
     port: 8080,
-    allowedHosts: "sb-67376r1iyy26.vercel.run",
+    allowedHosts: [".vercel.run"],
     hmr: {
       protocol: "ws",
       host: undefined,
