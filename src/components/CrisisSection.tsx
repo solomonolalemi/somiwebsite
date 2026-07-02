@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { motion } from "framer-motion";
 import { BookOpen, Truck, HeartHandshake } from "lucide-react";
+import patternSvg from "@/assets/pattern-outline.svg";
 
 const stats = [
   {
@@ -110,8 +111,17 @@ const NarrativeCards = () => {
 
 const CrisisSection = () => {
   return (
-    <section id="crisis" className="py-20 lg:py-28 somi-section-light">
-      <div className="container mx-auto px-4 lg:px-8">
+    <section id="crisis" className="relative py-20 lg:py-28 somi-section-light overflow-hidden">
+      {/* Pattern Background */}
+      <div className="absolute inset-0 opacity-15 pointer-events-none">
+        <img 
+          src={patternSvg} 
+          alt="" 
+          className="w-full h-full object-cover"
+          aria-hidden="true"
+        />
+      </div>
+      <div className="container mx-auto px-4 lg:px-8 relative z-10">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}

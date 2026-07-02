@@ -6,7 +6,7 @@ const HeroSection = () => {
   return (
     <section className="relative bg-background pt-28 pb-16 lg:pt-36 lg:pb-24 overflow-hidden">
       {/* Pattern Background */}
-      <div className="absolute inset-0 opacity-5 pointer-events-none">
+      <div className="absolute inset-0 opacity-15 pointer-events-none">
         <img 
           src={patternSvg} 
           alt="" 

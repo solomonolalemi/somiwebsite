@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { motion } from "framer-motion";
 import { Heart, Building, Flag, Stethoscope, ChevronLeft, ChevronRight } from "lucide-react";
+import patternSvg from "@/assets/pattern-outline.svg";
 
 const cards = [
   {
@@ -48,8 +49,17 @@ const ActionCardsSection = () => {
   const maxScroll = Math.max(0, cards.length - 3);
 
   return (
-    <section id="action" className="py-20 lg:py-28 bg-background overflow-hidden">
-      <div className="container mx-auto px-4 lg:px-8">
+    <section id="action" className="relative py-20 lg:py-28 bg-background overflow-hidden">
+      {/* Pattern Background */}
+      <div className="absolute inset-0 opacity-15 pointer-events-none">
+        <img 
+          src={patternSvg} 
+          alt="" 
+          className="w-full h-full object-cover"
+          aria-hidden="true"
+        />
+      </div>
+      <div className="container mx-auto px-4 lg:px-8 relative z-10">
         {/* Header row */}
         <div className="flex items-end justify-between mb-12">
           <motion.h2

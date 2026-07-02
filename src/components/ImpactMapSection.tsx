@@ -2,6 +2,7 @@ import { useState } from "react";
 import { motion } from "framer-motion";
 import { Users, Building2, Heart } from "lucide-react";
 import InteractiveMap from "@/components/InteractiveMap";
+import patternSvg from "@/assets/pattern-outline.svg";
 
 const metrics = [
   { icon: Users, label: "Total Men Screened", value: "780+" },
@@ -17,8 +18,17 @@ const pins = [
 
 const ImpactMapSection = () => {
   return (
-    <section id="impact" className="py-20 lg:py-28 bg-foreground">
-      <div className="container mx-auto px-4 lg:px-8">
+    <section id="impact" className="relative py-20 lg:py-28 bg-foreground overflow-hidden">
+      {/* Pattern Background */}
+      <div className="absolute inset-0 opacity-15 pointer-events-none">
+        <img 
+          src={patternSvg} 
+          alt="" 
+          className="w-full h-full object-cover"
+          aria-hidden="true"
+        />
+      </div>
+      <div className="container mx-auto px-4 lg:px-8 relative z-10">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}

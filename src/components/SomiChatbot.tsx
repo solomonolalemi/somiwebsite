@@ -5,7 +5,8 @@ import ReactMarkdown from "react-markdown";
 
 type Message = { role: "user" | "assistant"; content: string };
 
-const CHAT_URL = `${import.meta.env.VITE_SUPABASE_URL}/functions/v1/somi-chat`;
+const SUPABASE_URL = import.meta.env.VITE_SUPABASE_URL || import.meta.env.VITE_PUBLIC_SUPABASE_URL;
+const CHAT_URL = `${SUPABASE_URL}/functions/v1/somi-chat`;
 
 const QUICK_PROMPTS = [
   "What is prostate cancer?",
@@ -25,11 +26,12 @@ async function streamChat({
   onDone: () => void;
   onError: (msg: string) => void;
 }) {
+  const publishableKey = import.meta.env.VITE_SUPABASE_PUBLISHABLE_KEY || import.meta.env.VITE_PUBLIC_SUPABASE_PUBLISHABLE_KEY;
   const resp = await fetch(CHAT_URL, {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
-      Authorization: `Bearer ${import.meta.env.VITE_SUPABASE_PUBLISHABLE_KEY}`,
+      Authorization: `Bearer ${publishableKey}`,
     },
     body: JSON.stringify({ messages }),
   });
