@@ -7,6 +7,7 @@ import teamAdemola from "@/assets/team-ademola-bank.jpeg";
 import teamSolomon from "@/assets/team-solomon.png";
 import teamAyobami from "@/assets/team-ayobami.png";
 import teamPrecious from "@/assets/team-precious.png";
+import teamMoyinoluwa from "@/assets/team-moyinoluwa.jpeg";
 import {
   Dialog,
   DialogContent,
@@ -26,6 +27,7 @@ const leadership: TeamMember[] = [
   {
     name: "Dr. Moyinoluwa Akinwumi",
     role: "Founder / Executive Director",
+    image: teamMoyinoluwa,
     bio: "Dr. Moyinoluwa Akinwumi, fondly called Dr. MO, is the founder of the Saving Our Men Initiative. The first non-governmental organization (NGO) in Nigeria dedicated to prostate cancer awareness and screening. She has over 10 years of experience in community engagement and health workshops. A YALI (Young African Leader Initiative) alumnus and United People Global (UUPG) Leader. She works at a cancer center in Nigeria, where she passionately cares for thousands of patients. She is compassionate about cancer prevention, health equity, and advocacy. In her leisure time, she enjoys photography, capturing life moments through creative lenses.",
   },
   {
@@ -82,11 +84,13 @@ const boardOfTrustees: TeamMember[] = [
   {
     name: "Dr. Moyinoluwa Akinwumi",
     role: "Board of Trustees",
+    image: teamMoyinoluwa,
     bio: "Dr. Moyinoluwa Akinwumi, fondly called Dr. MO, is the founder of the Saving Our Men Initiative. The first non-governmental organization (NGO) in Nigeria dedicated to prostate cancer awareness and screening. She has over 10 years of experience in community engagement and health workshops. A YALI (Young African Leader Initiative) alumnus and United People Global (UUPG) Leader. She works at a cancer center in Nigeria, where she passionately cares for thousands of patients. She is compassionate about cancer prevention, health equity, and advocacy. In her leisure time, she enjoys photography, capturing life moments through creative lenses.",
   },
   {
     name: "Dr. Kabir Shomorin",
     role: "Board of Trustees",
+    image: teamKabir,
     bio: "He is a seasoned dental surgeon, whom over the years as a healthcare provider in his field of expertise, had gained recognition. His background involvement in providing for the underserved populace has steered his motives to continuously render community's health education and workshops, collaborating with local government agencies and other NGOs. His belief in giving to the community has been the driving force behind his relentless humanitarian services. When he is not providing solutions to worries of mankind, he is busy travelling, hiking and seeking new adventures.",
   },
   {
