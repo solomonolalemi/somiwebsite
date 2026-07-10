@@ -54,7 +54,14 @@ const Stories = () => {
 
   const handleStoryClick = (story: ImpactStory) => {
     if (story.has_video && story.video_url) {
-      window.open(story.video_url, "_blank", "noopener,noreferrer");
+      // Open video in new tab with proper handling for production
+      const link = document.createElement("a");
+      link.href = story.video_url;
+      link.target = "_blank";
+      link.rel = "noopener noreferrer";
+      document.body.appendChild(link);
+      link.click();
+      document.body.removeChild(link);
     }
   };
 

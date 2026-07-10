@@ -1,5 +1,6 @@
 import { motion } from "framer-motion";
 import { BookOpen, Cross, ShieldCheck } from "lucide-react";
+import { Link } from "react-router-dom";
 import SomiHeader from "@/components/SomiHeader";
 import SomiFooter from "@/components/SomiFooter";
 import TeamSection from "@/components/TeamSection";
@@ -112,15 +113,18 @@ const AboutUs = () => {
           </motion.h2>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             {missionBlocks.map((block, i) => (
-              <motion.div
+              <Link
                 key={block.title}
-                initial={{ opacity: 0, y: 24 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: i * 0.12, duration: 0.5 }}
-                whileHover={{ y: -8, scale: 1.02 }}
-                className="group relative bg-background rounded-2xl border border-border p-8 cursor-pointer overflow-hidden transition-shadow duration-500 hover:shadow-[0_20px_60px_-12px_hsl(160_50%_38%/0.15)] hover:border-primary/40"
+                to="/stories"
               >
+                <motion.div
+                  initial={{ opacity: 0, y: 24 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ delay: i * 0.12, duration: 0.5 }}
+                  whileHover={{ y: -8, scale: 1.02 }}
+                  className="group relative bg-background rounded-2xl border border-border p-8 cursor-pointer overflow-hidden transition-shadow duration-500 hover:shadow-[0_20px_60px_-12px_hsl(160_50%_38%/0.15)] hover:border-primary/40 h-full"
+                >
                 {/* Gradient accent bar */}
                 <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-primary to-primary/40 origin-left scale-x-0 group-hover:scale-x-100 transition-transform duration-500" />
 
@@ -146,6 +150,7 @@ const AboutUs = () => {
                   </svg>
                 </div>
               </motion.div>
+              </Link>
             ))}
           </div>
         </div>
