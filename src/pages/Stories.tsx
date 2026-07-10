@@ -1,15 +1,12 @@
 import { motion } from "framer-motion";
 import { Play, ArrowRight, ChevronLeft, ChevronRight, Shield, Youtube, Instagram } from "lucide-react";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
+import { supabase } from "@/integrations/supabase/client";
 import SomiHeader from "@/components/SomiHeader";
 import SomiFooter from "@/components/SomiFooter";
 import BlogSection from "@/components/BlogSection";
 import somiLogo from "@/assets/somi-logo.png";
-import somiEvent5 from "@/assets/somi-event-5.jpg";
-import somiEvent6 from "@/assets/somi-event-6.jpg";
-import somiEvent7 from "@/assets/somi-event-7.jpg";
-import somiEvent8 from "@/assets/somi-event-8.jpg";
 import somiEvent2 from "@/assets/somi-event-2.jpg";
 
 const fadeUp = {
@@ -19,45 +16,36 @@ const fadeUp = {
   transition: { duration: 0.5 },
 };
 
-const impactStories = [
-  {
-    id: 1,
-    category: "Community Impact",
-    image: somiEvent5,
-    title: "Over 400 Men Screened: The Ilesha Mass Outreach Highlight",
-    description: "Watch how our medical team mobilized to bring early detection to Osun State, breaking down healthcare barriers in a single day.",
-    hasVideo: true,
-  },
-  {
-    id: 2,
-    category: "Human Story",
-    image: somiEvent6,
-    title: "A Second Chance: How a 15-Minute Screening in Ajah Saved a Father's Life",
-    description: "Hear directly from one of the 180+ men screened at our Ajah LCDA outreach about the importance of knowing your status.",
-    hasVideo: true,
-  },
-  {
-    id: 3,
-    category: "Digital Innovation",
-    image: somiEvent7,
-    title: "Modernizing Outreach: How SOMI Uses Tech for Secure Health Data",
-    description: "A look behind the scenes at our digital intake process, paving the way for our future dedicated health data center to track national prostate cancer trends.",
-    hasVideo: false,
-  },
-  {
-    id: 4,
-    category: "Government Partnership",
-    image: somiEvent8,
-    title: "Partnering for Health: The Lekki LCDA 200-Man Screening Event",
-    description: "See the power of collaboration as we partnered with local government to bring comprehensive men's wellness directly to the Lekki community.",
-    hasVideo: true,
-  },
-];
+interface ImpactStory {
+  id: string;
+  category: string;
+  image_url: string | null;
+  title: string;
+  description: string | null;
+  has_video: boolean;
+  video_url?: string | null;
+}
 
 const ITEMS_PER_PAGE = 4;
 
 const Stories = () => {
+  const [impactStories, setImpactStories] = useState<ImpactStory[]>([]);
+  const [loading, setLoading] = useState(true);
   const [currentPage, setCurrentPage] = useState(1);
+
+  useEffect(() => {
+    const fetchStories = async () => {
+      const { data } = await supabase
+        .from("impact_stories")
+        .select("*")
+        .eq("published", true)
+        .order("display_order");
+      setImpactStories((data as ImpactStory[]) || []);
+      setLoading(false);
+    };
+    fetchStories();
+  }, []);
+
   const totalPages = Math.ceil(impactStories.length / ITEMS_PER_PAGE);
   const paginatedStories = impactStories.slice(
     (currentPage - 1) * ITEMS_PER_PAGE,
@@ -142,8 +130,17 @@ const Stories = () => {
             Choose an impact story to explore:
           </motion.h3>
 
-          <div className="max-w-5xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-6">
-            {paginatedStories.map((story, i) => (
+          {loading ? (
+            <div className="flex items-center justify-center py-16">
+              <p className="text-muted-foreground">Loading stories...</p>
+            </div>
+          ) : impactStories.length === 0 ? (
+            <div className="flex items-center justify-center py-16">
+              <p className="text-muted-foreground text-center">No published stories yet. Check back soon!</p>
+            </div>
+          ) : (
+            <div className="max-w-5xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-6">
+              {paginatedStories.map((story, i) => (
               <motion.div
                 key={story.id}
                 {...fadeUp}
@@ -152,17 +149,25 @@ const Stories = () => {
                 className="group relative bg-background rounded-2xl border border-border overflow-hidden cursor-pointer transition-all duration-300 hover:border-primary/30 hover:shadow-[0_20px_60px_-12px_hsl(160_50%_38%/0.12)]"
               >
                 {/* Thumbnail */}
-                <div className="relative h-56 overflow-hidden">
-                  <img
-                    src={story.image}
-                    alt={story.title}
-                    className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
-                    loading="lazy"
-                  />
-                  <div className="absolute inset-0 bg-foreground/30 group-hover:bg-foreground/40 transition-colors duration-300" />
+                <div className="relative h-56 overflow-hidden bg-muted">
+                  {story.image_url ? (
+                    <>
+                      <img
+                        src={story.image_url}
+                        alt={story.title}
+                        className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+                        loading="lazy"
+                      />
+                      <div className="absolute inset-0 bg-foreground/30 group-hover:bg-foreground/40 transition-colors duration-300" />
+                    </>
+                  ) : (
+                    <div className="w-full h-full flex items-center justify-center text-muted-foreground">
+                      No image
+                    </div>
+                  )}
 
                   {/* Play button */}
-                  {story.hasVideo && (
+                  {story.has_video && (
                     <div className="absolute inset-0 flex items-center justify-center">
                       <div className="w-16 h-16 rounded-full bg-primary/90 backdrop-blur-sm flex items-center justify-center shadow-lg group-hover:scale-110 transition-transform duration-300">
                         <Play className="w-7 h-7 text-primary-foreground ml-1" fill="currentColor" />
@@ -187,13 +192,14 @@ const Stories = () => {
                     {story.description}
                   </p>
                   <span className="inline-flex items-center gap-1.5 text-sm font-semibold text-primary opacity-0 group-hover:opacity-100 translate-x-[-8px] group-hover:translate-x-0 transition-all duration-300">
-                    {story.hasVideo ? "Watch Story" : "Read More"}
+                    {story.has_video ? "Watch Story" : "Read More"}
                     <ArrowRight className="w-3.5 h-3.5" />
                   </span>
                 </div>
               </motion.div>
-            ))}
-          </div>
+              ))}
+            </div>
+          )}
 
           {/* Pagination */}
           <motion.div {...fadeUp} transition={{ delay: 0.4 }} className="flex items-center justify-center gap-2 mt-12">
