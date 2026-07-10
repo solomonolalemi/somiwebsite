@@ -52,6 +52,12 @@ const Stories = () => {
     currentPage * ITEMS_PER_PAGE
   );
 
+  const handleStoryClick = (story: ImpactStory) => {
+    if (story.has_video && story.video_url) {
+      window.open(story.video_url, "_blank", "noopener,noreferrer");
+    }
+  };
+
   return (
     <div className="min-h-screen bg-background">
       <SomiHeader />
@@ -146,6 +152,7 @@ const Stories = () => {
                 {...fadeUp}
                 transition={{ delay: i * 0.1, duration: 0.5 }}
                 whileHover={{ y: -6 }}
+                onClick={() => handleStoryClick(story)}
                 className="group relative bg-background rounded-2xl border border-border overflow-hidden cursor-pointer transition-all duration-300 hover:border-primary/30 hover:shadow-[0_20px_60px_-12px_hsl(160_50%_38%/0.12)]"
               >
                 {/* Thumbnail */}
