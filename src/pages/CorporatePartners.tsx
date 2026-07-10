@@ -23,7 +23,7 @@ const tiers = [
 ];
 
 const trustLogos = [
-  "Providus Bank", "Lekki LCDA", "First Consultant Medical Centre", "Reddington Hospital",
+  "Philanthropists", "Lekki LCDA", "Ilesha Community",
 ];
 
 const partnershipInterests = [
