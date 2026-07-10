@@ -1,4 +1,4 @@
-import { Mail } from "lucide-react";
+import { Mail, Phone, MapPin } from "lucide-react";
 import { useState } from "react";
 import { Link } from "react-router-dom";
 import { supabase } from "@/integrations/supabase/client";
@@ -28,7 +28,7 @@ const SomiFooter = () => {
   return (
     <footer className="bg-foreground py-16 border-t border-background/10">
       <div className="container mx-auto px-4 lg:px-8">
-        <div className="grid md:grid-cols-4 gap-10 mb-12">
+        <div className="grid md:grid-cols-5 gap-10 mb-12">
           {/* Brand */}
           <div>
             <h3 className="text-xl font-bold text-background mb-3">SOMI</h3>
@@ -88,6 +88,42 @@ const SomiFooter = () => {
                   </a>
                 </li>
               ))}
+            </ul>
+          </div>
+
+          {/* Contact Us */}
+          <div>
+            <h4 className="text-primary font-semibold text-sm mb-4 uppercase tracking-wider">
+              Contact Us
+            </h4>
+            <ul className="space-y-3">
+              <li>
+                <a
+                  href="tel:+2347078199819"
+                  className="text-background/50 hover:text-primary text-sm transition-colors flex items-center gap-2"
+                >
+                  <Phone className="w-4 h-4" />
+                  07078199819
+                </a>
+              </li>
+              <li>
+                <a
+                  href="mailto:care@savingourmen.com"
+                  className="text-background/50 hover:text-primary text-sm transition-colors flex items-center gap-2 break-all"
+                >
+                  <Mail className="w-4 h-4 flex-shrink-0" />
+                  care@savingourmen.com
+                </a>
+              </li>
+              <li>
+                <a
+                  href="mailto:care.savingourmen@gmail.com"
+                  className="text-background/50 hover:text-primary text-sm transition-colors flex items-center gap-2 break-all"
+                >
+                  <Mail className="w-4 h-4 flex-shrink-0" />
+                  care.savingourmen@gmail.com
+                </a>
+              </li>
             </ul>
           </div>
 
