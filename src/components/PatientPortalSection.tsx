@@ -65,7 +65,7 @@ const PatientPortalSection = () => {
             <p className="text-muted-foreground text-sm leading-relaxed flex-1 mb-6">
               Have questions? Speak confidentially with our medical advisors.
             </p>
-            <a href="https://wa.me/+2348115239655" target="_blank" rel="noopener noreferrer" className="somi-btn-outline text-sm py-2.5 px-5 text-center">
+            <a href="https://wa.me/+2347078199819" target="_blank" rel="noopener noreferrer" className="somi-btn-outline text-sm py-2.5 px-5 text-center">
               Chat on WhatsApp
             </a>
           </motion.div>
