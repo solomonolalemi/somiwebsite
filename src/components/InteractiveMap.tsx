@@ -13,6 +13,9 @@ interface MapPinData {
   lng: number;
   date?: string;
   imageUrl?: string;
+  screened?: number;
+  normal?: number;
+  highPsa?: number;
 }
 
 interface InteractiveMapProps {
@@ -129,10 +132,31 @@ const InteractiveMap = ({ pins, variant = "dark", className = "" }: InteractiveM
 
               <div className="h-px bg-border mb-4" />
 
+              {/* Breakdown Statistics */}
+              {activePin.screened !== undefined && (
+                <>
+                  <div className="space-y-3">
+                    <div className="flex justify-between items-center">
+                      <span className="text-xs font-semibold tracking-wider text-muted-foreground uppercase">Screened</span>
+                      <span className="text-lg font-bold text-primary">{activePin.screened}</span>
+                    </div>
+                    <div className="flex justify-between items-center">
+                      <span className="text-xs font-semibold tracking-wider text-muted-foreground uppercase">Normal PSA</span>
+                      <span className="text-lg font-bold text-green-500">{activePin.normal}</span>
+                    </div>
+                    <div className="flex justify-between items-center">
+                      <span className="text-xs font-semibold tracking-wider text-muted-foreground uppercase">High PSA</span>
+                      <span className="text-lg font-bold text-red-500">{activePin.highPsa}</span>
+                    </div>
+                  </div>
+                  <div className="h-px bg-border my-4" />
+                </>
+              )}
+
               <div className="grid grid-cols-2 gap-4 text-center">
                 {activePin.date && (
                   <div>
-                    <p className="text-xs font-semibold tracking-wider text-muted-foreground uppercase mb-1">Date</p>
+                    <p className="text-xs font-semibold tracking-wider text-muted-foreground uppercase mb-1">Year</p>
                     <p className="text-sm font-medium text-foreground">{activePin.date}</p>
                   </div>
                 )}

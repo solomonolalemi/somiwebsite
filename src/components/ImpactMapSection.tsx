@@ -5,15 +5,50 @@ import InteractiveMap from "@/components/InteractiveMap";
 import patternSvg from "@/assets/pattern-outline.svg";
 
 const metrics = [
-  { icon: Users, label: "Total Men Screened", value: "780+" },
-  { icon: Building2, label: "Communities Reached", value: "5+" },
-  { icon: Heart, label: "Men Supported with Care", value: "300+" },
+  { icon: Users, label: "Total Men Screened", value: "330", suffix: "" },
+  { icon: Building2, label: "No. with Normal PSA", value: "286", suffix: " (86.7%)" },
+  { icon: Heart, label: "No. with High PSA", value: "44", suffix: " (13.3%)" },
 ];
 
+const referralMetric = { label: "No. Referred", value: "38", suffix: " (86%)" };
+
 const pins = [
-  { id: 1, state: "Osun State", title: "Ilesha Outreach", detail: "400+", lat: 7.6167, lng: 4.7333, date: "February 2025" },
-  { id: 2, state: "Lagos State", title: "Lekki LCDA Outreach", detail: "200+", lat: 6.4698, lng: 3.5852, date: "December 2025" },
-  { id: 3, state: "Lagos State", title: "Ajah LCDA Outreach", detail: "180+", lat: 6.4667, lng: 3.6167, date: "February 2026" },
+  { 
+    id: 1, 
+    state: "Eti-Osa, Lagos State", 
+    title: "Eti-Osa Outreach", 
+    detail: "59",
+    lat: 6.4532,
+    lng: 3.6209,
+    date: "2025",
+    screened: 59,
+    normal: 51,
+    highPsa: 8
+  },
+  { 
+    id: 2, 
+    state: "Ibeju-Lekki, Lagos State", 
+    title: "Ibeju-Lekki Outreach", 
+    detail: "190",
+    lat: 6.4698,
+    lng: 3.5852,
+    date: "2025",
+    screened: 190,
+    normal: 171,
+    highPsa: 19
+  },
+  { 
+    id: 3, 
+    state: "Ilesa West, Osun State", 
+    title: "Ilesa West Outreach", 
+    detail: "81",
+    lat: 7.6167,
+    lng: 4.7333,
+    date: "2025",
+    screened: 81,
+    normal: 64,
+    highPsa: 17
+  },
 ];
 
 const ImpactMapSection = () => {
@@ -46,7 +81,7 @@ const ImpactMapSection = () => {
         </motion.div>
 
         {/* Metrics */}
-        <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-12">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 mb-12">
           {metrics.map((m, i) => (
             <motion.div
               key={m.label}
@@ -59,8 +94,22 @@ const ImpactMapSection = () => {
               <m.icon className="w-5 h-5 text-primary mx-auto mb-2" />
               <p className="text-3xl font-bold text-primary">{m.value}</p>
               <p className="text-background/50 text-sm mt-1">{m.label}</p>
+              {m.suffix && <p className="text-primary text-xs font-semibold mt-1">{m.suffix}</p>}
             </motion.div>
           ))}
+          {/* No. Referred */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ delay: 0.3 }}
+            className="bg-background/5 backdrop-blur-sm border border-background/10 rounded-2xl p-6 text-center"
+          >
+            <Heart className="w-5 h-5 text-primary mx-auto mb-2" />
+            <p className="text-3xl font-bold text-primary">{referralMetric.value}</p>
+            <p className="text-background/50 text-sm mt-1">{referralMetric.label}</p>
+            <p className="text-primary text-xs font-semibold mt-1">{referralMetric.suffix}</p>
+          </motion.div>
         </div>
 
         {/* Map */}
