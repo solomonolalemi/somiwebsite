@@ -12,6 +12,7 @@ import Stories from "./pages/Stories";
 import CorporatePartners from "./pages/CorporatePartners";
 import Events from "./pages/Events";
 import Donate from "./pages/Donate";
+import CancerWalk from "./pages/CancerWalk";
 import NotFound from "./pages/NotFound";
 import AdminLogin from "./pages/AdminLogin";
 import AdminLayout from "./components/admin/AdminLayout";
@@ -43,6 +44,7 @@ const App = () => (
           <Route path="/partners" element={<CorporatePartners />} />
           <Route path="/events" element={<Events />} />
           <Route path="/donate" element={<Donate />} />
+          <Route path="/cancer-walk" element={<CancerWalk />} />
           <Route path="/admin" element={<AdminLogin />} />
           <Route path="/admin" element={<AdminLayout />}>
             <Route path="dashboard" element={<AdminDashboard />} />
