@@ -1,7 +1,14 @@
 import { ArrowDownRight, ArrowRight, CalendarDays, Check, Clock3, Heart, MapPin, Route, ShieldCheck, Users } from "lucide-react";
 import { Link } from "react-router-dom";
 
-const routeStops = ["Yaba", "Jibowu", "Maryland", "Ikeja", "Maryland", "Yaba"];
+const routeStops = [
+  { name: "Yaba", km: "0 km", label: "Start line", color: "bg-[#a7df4c]" },
+  { name: "Jibowu", km: "2 km", label: "First checkpoint", color: "bg-[#50c4df]" },
+  { name: "Maryland", km: "5 km", label: "Hydration station", color: "bg-[#f4b942]" },
+  { name: "Ikeja", km: "7 km", label: "Turnaround point", color: "bg-[#f26b5e]" },
+  { name: "Maryland", km: "9 km", label: "Hydration station", color: "bg-[#f4b942]" },
+  { name: "Yaba", km: "11 km", label: "Finish line", color: "bg-[#a7df4c]" },
+];
 
 const CancerWalk = () => {
   return (
@@ -36,17 +43,28 @@ const CancerWalk = () => {
             <div><p className="text-sm font-bold uppercase tracking-[0.25em] text-[#a7df4c]">The route</p><h2 className="mt-4 max-w-2xl text-5xl font-black tracking-[-0.05em] sm:text-7xl">Every stop makes<br /><span className="text-[#a7df4c]">a difference.</span></h2></div>
             <p className="max-w-sm text-white/65">A community route through Lagos designed to bring prostate cancer awareness to more people, one neighbourhood at a time.</p>
           </div>
-          <div className="relative mt-16 overflow-hidden rounded-[2rem] border border-white/10 bg-white/[0.04] p-6 sm:p-10">
-            <div className="absolute left-[8%] right-[8%] top-1/2 hidden border-t-2 border-dashed border-[#a7df4c]/50 md:block" />
-            <div className="relative grid gap-8 sm:grid-cols-2 md:grid-cols-6 md:gap-3">
+          <div className="relative mt-16 overflow-hidden rounded-[2rem] border border-white/10 bg-gradient-to-br from-white/[0.1] via-white/[0.04] to-[#50c4df]/10 p-6 shadow-2xl shadow-black/20 sm:p-10">
+            <div className="absolute -right-16 -top-16 h-48 w-48 rounded-full bg-[#f26b5e]/20 blur-3xl" />
+            <div className="absolute -bottom-20 left-1/3 h-52 w-52 rounded-full bg-[#50c4df]/15 blur-3xl" />
+            <div className="relative mb-10 flex flex-wrap items-center justify-between gap-4 border-b border-white/10 pb-6">
+              <div><p className="text-xs font-bold uppercase tracking-[0.25em] text-[#a7df4c]">11 km community route</p><p className="mt-2 text-white/60">Follow the colour-coded checkpoints across Lagos.</p></div>
+              <div className="flex items-center gap-3 text-xs font-bold uppercase tracking-wider"><span className="h-3 w-3 rounded-full bg-[#f4b942]" /> Hydration at 5 km &amp; 9 km</div>
+            </div>
+            <div className="relative grid gap-4 sm:grid-cols-2 md:grid-cols-6 md:gap-2">
+              <div className="absolute left-[8%] right-[8%] top-8 hidden border-t-2 border-dashed border-white/30 md:block" />
               {routeStops.map((stop, index) => (
-                <div key={`${stop}-${index}`} className="relative flex items-center gap-4 md:block md:text-center">
-                  <div className={`relative z-10 flex h-14 w-14 shrink-0 items-center justify-center rounded-full border-4 border-[#062d3a] ${index === 0 || index === routeStops.length - 1 ? "bg-[#a7df4c] text-[#062d3a]" : "bg-white/10 text-[#a7df4c]"} shadow-[0_0_0_2px_rgba(167,223,76,0.55)]`}><MapPin className="h-6 w-6" /></div>
-                  <div className="md:mt-5"><span className="text-[10px] font-bold uppercase tracking-[0.25em] text-[#a7df4c]">Stop 0{index + 1}</span><p className="mt-1 text-lg font-black">{stop}</p></div>
+                <div key={`${stop.name}-${index}`} className="relative z-10 flex items-center gap-4 rounded-2xl border border-white/10 bg-[#062d3a]/70 p-3 md:block md:border-0 md:bg-transparent md:p-0 md:text-center">
+                  <div className={`relative mx-0 flex h-16 w-16 shrink-0 items-center justify-center rounded-full border-4 border-[#062d3a] ${stop.color} text-[#062d3a] shadow-[0_0_0_3px_rgba(255,255,255,0.3)] md:mx-auto`}><MapPin className="h-7 w-7" /></div>
+                  <div className="md:mt-5"><span className="text-xs font-black uppercase tracking-[0.2em] text-white/50">{stop.km}</span><p className="mt-1 text-lg font-black">{stop.name}</p><p className="mt-1 text-[10px] font-bold uppercase leading-4 tracking-wider text-[#a7df4c]">{stop.label}</p></div>
                 </div>
               ))}
             </div>
-            <div className="mt-10 flex items-center justify-between border-t border-white/10 pt-6 text-xs font-bold uppercase tracking-[0.18em] text-white/45"><span>Start: Yaba</span><Route className="h-5 w-5 text-[#a7df4c]" /><span>Finish: Yaba</span></div>
+            <div className="relative mt-10 grid gap-3 sm:grid-cols-3">
+              <div className="rounded-xl bg-[#50c4df]/15 p-4"><p className="text-xs font-bold uppercase tracking-wider text-[#50c4df]">2 km</p><p className="mt-1 text-sm text-white/70">Jibowu checkpoint</p></div>
+              <div className="rounded-xl bg-[#f4b942]/15 p-4"><p className="text-xs font-bold uppercase tracking-wider text-[#f4b942]">5 km + 9 km</p><p className="mt-1 text-sm text-white/70">Water, electrolytes and encouragement</p></div>
+              <div className="rounded-xl bg-[#f26b5e]/15 p-4"><p className="text-xs font-bold uppercase tracking-wider text-[#f26b5e]">7 km</p><p className="mt-1 text-sm text-white/70">Ikeja turnaround</p></div>
+            </div>
+            <div className="mt-8 flex items-center justify-between border-t border-white/10 pt-6 text-xs font-bold uppercase tracking-[0.18em] text-white/45"><span>Start: Yaba</span><Route className="h-5 w-5 text-[#a7df4c]" /><span>Finish: Yaba</span></div>
           </div>
         </div>
       </section>
