@@ -33,7 +33,11 @@ const App = () => {
   const isCancerWalkHost = typeof window !== "undefined" && window.location.hostname === "walk.savingourmen.com";
 
   if (isCancerWalkHost) {
-    return <CancerWalk />;
+    return (
+      <BrowserRouter>
+        <CancerWalk />
+      </BrowserRouter>
+    );
   }
 
   return (
