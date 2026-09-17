@@ -29,7 +29,14 @@ import NewsletterPopup from "./components/NewsletterPopup";
 
 const queryClient = new QueryClient();
 
-const App = () => (
+const App = () => {
+  const isCancerWalkHost = typeof window !== "undefined" && window.location.hostname === "walk.savingourmen.com";
+
+  if (isCancerWalkHost) {
+    return <CancerWalk />;
+  }
+
+  return (
   <QueryClientProvider client={queryClient}>
     <TooltipProvider>
       <Toaster />
@@ -65,6 +72,7 @@ const App = () => (
       </BrowserRouter>
     </TooltipProvider>
   </QueryClientProvider>
-);
+  );
+};
 
 export default App;
