@@ -27,7 +27,7 @@ const CancerWalk = () => {
         <div className="absolute inset-0 -z-10 bg-gradient-to-r from-[#062d3a] via-[#062d3a]/80 to-[#062d3a]/20" />
         <div className="mx-auto w-full max-w-7xl px-5 pb-20 lg:px-10 lg:pb-28">
           <p className="mb-5 flex items-center gap-3 text-sm font-bold uppercase tracking-[0.28em] text-[#a7df4c]"><span className="h-2 w-2 rounded-full bg-[#a7df4c]" />Cancer Walk 2026</p>
-          <h1 className="max-w-4xl text-6xl font-black leading-[0.9] tracking-[-0.06em] sm:text-7xl lg:text-[9rem]">Walk For<br /><span className="text-[#a7df4c]">His Life.</span></h1>
+          <h1 className="max-w-4xl text-6xl font-black leading-[0.9] tracking-[-0.06em] sm:text-7xl lg:text-[9rem]">Walk For<br /><span className="text-[#a7df4c]">Life.</span></h1>
           <p className="mt-8 max-w-xl text-lg leading-7 text-white/80 sm:text-xl">One step can start a conversation. Join SOMI as we walk to promote cancer awareness, early screening, and healthier communities.</p>
           <div className="mt-10 flex flex-wrap gap-4"><a href={registrationFormUrl} target="_blank" rel="noreferrer" className="inline-flex items-center gap-3 rounded-full bg-[#a7df4c] px-7 py-4 font-bold text-[#062d3a] transition-transform hover:scale-105">Register to walk <ArrowRight className="h-5 w-5" /></a><a href="#route" className="inline-flex items-center gap-3 rounded-full border border-white/40 px-7 py-4 font-bold text-white hover:bg-white/10">See the route <ArrowDownRight className="h-5 w-5" /></a></div>
         </div>
