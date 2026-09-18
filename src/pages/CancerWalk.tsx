@@ -41,7 +41,7 @@ const CancerWalk = () => {
         <div className="relative mx-auto max-w-7xl">
           <div className="flex flex-col justify-between gap-8 md:flex-row md:items-end">
             <div><p className="text-sm font-bold uppercase tracking-[0.25em] text-[#a7df4c]">The route</p><h2 className="mt-4 max-w-2xl text-5xl font-black tracking-[-0.05em] sm:text-7xl">Every stop makes<br /><span className="text-[#a7df4c]">a difference.</span></h2></div>
-            <p className="max-w-sm text-white/65">A community route through Lagos designed to bring prostate cancer awareness to more people, one neighbourhood at a time.</p>
+            <p className="max-w-sm text-white/65">A community route through Lagos designed to bring cancer awareness to more people, one neighbourhood at a time.</p>
           </div>
           <div className="relative mt-16 overflow-hidden rounded-[2rem] border border-white/10 bg-gradient-to-br from-white/[0.1] via-white/[0.04] to-[#50c4df]/10 p-6 shadow-2xl shadow-black/20 sm:p-10">
             <div className="absolute -right-16 -top-16 h-48 w-48 rounded-full bg-[#f26b5e]/20 blur-3xl" />
