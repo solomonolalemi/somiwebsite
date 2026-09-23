@@ -6,11 +6,13 @@ import ActionCardsSection from "@/components/ActionCardsSection";
 import ResearchPublicationsSection from "@/components/ResearchPublicationsSection";
 import PatientPortalSection from "@/components/PatientPortalSection";
 import SomiFooter from "@/components/SomiFooter";
+import CancerWalkBanner from "@/components/CancerWalkBanner";
 
 const Index = () => {
   return (
     <div className="min-h-screen">
       <SomiHeader />
+      <CancerWalkBanner />
       <main>
         <HeroSection />
         <CrisisSection />
