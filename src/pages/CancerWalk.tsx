@@ -5,11 +5,8 @@ const registrationFormUrl = "https://docs.google.com/forms/d/e/1FAIpQLScPFBUlANG
 
 const routeStops = [
   { name: "Teslim Balogun Stadium", km: "0 km", label: "Convergence point", color: "bg-[#a7df4c]" },
-  { name: "Jibowu", km: "2 km", label: "First checkpoint", color: "bg-[#50c4df]" },
-  { name: "Maryland", km: "5 km", label: "Hydration station", color: "bg-[#f4b942]" },
-  { name: "Ikeja", km: "7 km", label: "Turnaround point", color: "bg-[#f26b5e]" },
-  { name: "Maryland", km: "9 km", label: "Hydration station", color: "bg-[#f4b942]" },
-  { name: "Unilag Sports Facility", km: "11 km", label: "Finish line", color: "bg-[#a7df4c]" },
+  { name: "Unilag Main Gate", km: "2 km", label: "Water + encouragement", color: "bg-[#50c4df]" },
+  { name: "Unilag Sports Facility", km: "5 km", label: "Finish line + celebration", color: "bg-[#f4b942]" },
 ];
 
 const CancerWalk = () => {
@@ -49,8 +46,8 @@ const CancerWalk = () => {
             <div className="absolute -right-16 -top-16 h-48 w-48 rounded-full bg-[#f26b5e]/20 blur-3xl" />
             <div className="absolute -bottom-20 left-1/3 h-52 w-52 rounded-full bg-[#50c4df]/15 blur-3xl" />
             <div className="relative mb-10 flex flex-wrap items-center justify-between gap-4 border-b border-white/10 pb-6">
-              <div><p className="text-xs font-bold uppercase tracking-[0.25em] text-[#a7df4c]">11 km community route</p><p className="mt-2 text-white/60">Follow the colour-coded checkpoints across Lagos.</p></div>
-              <div className="flex items-center gap-3 text-xs font-bold uppercase tracking-wider"><span className="h-3 w-3 rounded-full bg-[#f4b942]" /> Hydration at 5 km &amp; 9 km</div>
+              <div><p className="text-xs font-bold uppercase tracking-[0.25em] text-[#a7df4c]">5 km community route</p><p className="mt-2 text-white/60">Follow the colour-coded checkpoints across Lagos.</p></div>
+              <div className="flex items-center gap-3 text-xs font-bold uppercase tracking-wider"><span className="h-3 w-3 rounded-full bg-[#f4b942]" /> Water + encouragement at 2 km, 4 km &amp; finish</div>
             </div>
             <div className="relative grid gap-4 sm:grid-cols-2 md:grid-cols-6 md:gap-2">
               <div className="absolute left-[8%] right-[8%] top-8 hidden border-t-2 border-dashed border-white/30 md:block" />
@@ -62,9 +59,9 @@ const CancerWalk = () => {
               ))}
             </div>
             <div className="relative mt-10 grid gap-3 sm:grid-cols-3">
-              <div className="rounded-xl bg-[#50c4df]/15 p-4"><p className="text-xs font-bold uppercase tracking-wider text-[#50c4df]">2 km</p><p className="mt-1 text-sm text-white/70">Jibowu checkpoint</p></div>
-              <div className="rounded-xl bg-[#f4b942]/15 p-4"><p className="text-xs font-bold uppercase tracking-wider text-[#f4b942]">5 km + 9 km</p><p className="mt-1 text-sm text-white/70">Water, electrolytes and encouragement</p></div>
-              <div className="rounded-xl bg-[#f26b5e]/15 p-4"><p className="text-xs font-bold uppercase tracking-wider text-[#f26b5e]">7 km</p><p className="mt-1 text-sm text-white/70">Ikeja turnaround</p></div>
+              <div className="rounded-xl bg-[#50c4df]/15 p-4"><p className="text-xs font-bold uppercase tracking-wider text-[#50c4df]">2 km</p><p className="mt-1 text-sm text-white/70">Unilag Main Gate: water and encouragement</p></div>
+              <div className="rounded-xl bg-[#f26b5e]/15 p-4"><p className="text-xs font-bold uppercase tracking-wider text-[#f26b5e]">4 km</p><p className="mt-1 text-sm text-white/70">Water and encouragement station</p></div>
+              <div className="rounded-xl bg-[#f4b942]/15 p-4"><p className="text-xs font-bold uppercase tracking-wider text-[#f4b942]">5 km</p><p className="mt-1 text-sm text-white/70">Finish line at Unilag Sports Facility</p></div>
             </div>
             <div className="mt-8 flex flex-wrap items-center justify-between gap-4 border-t border-white/10 pt-6 text-xs font-bold uppercase tracking-[0.18em] text-white/45"><span>Start: Teslim Balogun Stadium</span><Route className="h-5 w-5 text-[#a7df4c]" /><span>Finish: Unilag Sports Facility</span></div>
           </div>
