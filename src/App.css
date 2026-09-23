@@ -18,6 +18,29 @@
   filter: drop-shadow(0 0 2em #61dafbaa);
 }
 
+@keyframes cancer-walk-marquee {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+.cancer-walk-marquee {
+  animation: cancer-walk-marquee 28s linear infinite;
+}
+
+.cancer-walk-marquee:hover {
+  animation-play-state: paused;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .cancer-walk-marquee {
+    animation: none;
+  }
+}
+
 @keyframes logo-spin {
   from {
     transform: rotate(0deg);
