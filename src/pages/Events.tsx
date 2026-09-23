@@ -27,41 +27,6 @@ type PublicEvent = {
   gallery_urls: string[] | null;
 };
 
-import somiEvent1 from "@/assets/somi-event-1.jpg";
-import somiEvent2 from "@/assets/somi-event-2.jpg";
-import somiEvent3 from "@/assets/somi-event-3.jpg";
-import somiEvent4 from "@/assets/somi-event-4.jpg";
-import somiEvent5 from "@/assets/somi-event-5.jpg";
-import somiEvent6 from "@/assets/somi-event-6.jpg";
-import somiEvent7 from "@/assets/somi-event-7.jpg";
-import somiEvent8 from "@/assets/somi-event-8.jpg";
-import somiEvent9 from "@/assets/somi-event-9.jpg";
-import somiEvent10 from "@/assets/somi-event-10.jpg";
-
-const pastEvents = [
-  {
-    image: somiEvent3,
-    caption: "Ilesha Outreach (Feb 2025)",
-    stat: "Over 400 men screened",
-    location: "Osun State",
-    gallery: [somiEvent3, somiEvent1, somiEvent2, somiEvent5],
-  },
-  {
-    image: somiEvent4,
-    caption: "Lekki LCDA (Dec 2025)",
-    stat: "Over 200 men screened",
-    location: "Lagos",
-    gallery: [somiEvent4, somiEvent6, somiEvent7, somiEvent8],
-  },
-  {
-    image: somiEvent9,
-    caption: "Ajah LCDA (Feb 2026)",
-    stat: "Over 180 men screened",
-    location: "Lagos",
-    gallery: [somiEvent9, somiEvent10, somiEvent1, somiEvent6],
-  },
-];
-
 const Events = () => {
   const [events, setEvents] = useState<PublicEvent[]>([]);
   const [eventsLoading, setEventsLoading] = useState(true);
@@ -160,7 +125,7 @@ const Events = () => {
             ) : (
               upcomingEvents.map((event, i) => (
                 <motion.div
-                  key={i}
+                  key={event.id}
                   {...fadeUp}
                   transition={{ delay: i * 0.12, duration: 0.5 }}
                   whileHover={{ y: -4 }}
@@ -177,8 +142,13 @@ const Events = () => {
                         <span className="text-[10px] font-bold text-primary group-hover:text-primary-foreground transition-colors duration-300 uppercase tracking-wide">Event</span>
                       </div>
 
+                      {event.cover_image_url && (
+                        <img src={event.cover_image_url} alt={event.title} className="h-32 w-full rounded-xl object-cover lg:h-28 lg:w-44" loading="lazy" />
+                      )}
+
                       {/* Details */}
                       <div className="flex-1 min-w-0">
+                        <div className="mb-2 text-xs font-bold uppercase tracking-[0.18em] text-primary">{event.title}</div>
                         <div className="flex flex-wrap items-center gap-x-4 gap-y-1 text-sm text-muted-foreground mb-2">
                           <span className="flex items-center gap-1.5">
                             <Calendar className="w-3.5 h-3.5" />

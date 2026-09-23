@@ -14,15 +14,7 @@ const CancerWalkBanner = () => {
             </span>
           ))}
         </div>
-      </div>
-      <div className="flex flex-col items-center justify-center gap-3 px-4 py-3 text-center sm:flex-row sm:gap-5">
-        <span className="text-sm text-white/75">Join SOMI for a 5 km walk to promote prostate cancer awareness.</span>
-        <a
-          href={registrationFormUrl}
-          target="_blank"
-          rel="noreferrer"
-          className="rounded-full bg-[#a7df4c] px-5 py-2 text-xs font-black uppercase tracking-wider text-[#062d3a] transition-transform hover:scale-105 focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-[#062d3a]"
-        >
+        <a href={registrationFormUrl} target="_blank" rel="noreferrer" className="relative z-10 mr-4 shrink-0 rounded-full bg-[#a7df4c] px-5 py-2 text-xs font-black uppercase tracking-wider text-[#062d3a] transition-transform hover:scale-105 focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-[#062d3a]">
           Register to walk
         </a>
       </div>
