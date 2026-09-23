@@ -4,12 +4,12 @@ import { Link } from "react-router-dom";
 const registrationFormUrl = "https://docs.google.com/forms/d/e/1FAIpQLScPFBUlANGtbpflULxzVYOe4LItiPmdEHDjXKIrYnRY8tuZTg/viewform";
 
 const routeStops = [
-  { name: "Yaba", km: "0 km", label: "Start line", color: "bg-[#a7df4c]" },
+  { name: "Teslim Balogun Stadium", km: "0 km", label: "Convergence point", color: "bg-[#a7df4c]" },
   { name: "Jibowu", km: "2 km", label: "First checkpoint", color: "bg-[#50c4df]" },
   { name: "Maryland", km: "5 km", label: "Hydration station", color: "bg-[#f4b942]" },
   { name: "Ikeja", km: "7 km", label: "Turnaround point", color: "bg-[#f26b5e]" },
   { name: "Maryland", km: "9 km", label: "Hydration station", color: "bg-[#f4b942]" },
-  { name: "Yaba", km: "11 km", label: "Finish line", color: "bg-[#a7df4c]" },
+  { name: "Unilag Sports Facility", km: "11 km", label: "Finish line", color: "bg-[#a7df4c]" },
 ];
 
 const CancerWalk = () => {
@@ -33,7 +33,7 @@ const CancerWalk = () => {
         </div>
       </section>
 
-      <section className="border-b border-[#062d3a]/10 bg-[#a7df4c] px-5 py-5 text-[#062d3a] lg:px-10"><div className="mx-auto flex max-w-7xl flex-wrap items-center gap-x-10 gap-y-4 text-sm font-bold uppercase tracking-wider"><span className="flex items-center gap-2"><CalendarDays className="h-5 w-5" /> Saturday, 21 November 2026</span><span className="flex items-center gap-2"><Clock3 className="h-5 w-5" /> 7:00 AM prompt</span><span className="flex items-center gap-2"><MapPin className="h-5 w-5" /> Meeting point: Yaba</span></div></section>
+      <section className="border-b border-[#062d3a]/10 bg-[#a7df4c] px-5 py-5 text-[#062d3a] lg:px-10"><div className="mx-auto flex max-w-7xl flex-wrap items-center gap-x-10 gap-y-4 text-sm font-bold uppercase tracking-wider"><span className="flex items-center gap-2"><CalendarDays className="h-5 w-5" /> Saturday, 21 November 2026</span><span className="flex items-center gap-2"><Clock3 className="h-5 w-5" /> 7:00 AM prompt</span><span className="flex items-center gap-2"><MapPin className="h-5 w-5" /> Convergence: Teslim Balogun Stadium</span></div></section>
 
       <section className="mx-auto grid max-w-7xl gap-12 px-5 py-24 lg:grid-cols-[0.8fr_1.2fr] lg:px-10 lg:py-32"><div><p className="text-sm font-bold uppercase tracking-[0.25em] text-[#8bbd35]">Why we walk</p><h2 className="mt-4 max-w-md text-5xl font-black leading-none tracking-[-0.05em] sm:text-6xl">Awareness moves us forward.</h2></div><div className="grid gap-8 sm:grid-cols-2"><div className="border-t-2 border-[#a7df4c] pt-5"><h3 className="text-xl font-black">Start the conversation</h3><p className="mt-3 leading-7 text-[#062d3a]/65">Prostate cancer is easier to face when men and families have the right information early.</p></div><div className="border-t-2 border-[#a7df4c] pt-5"><h3 className="text-xl font-black">Champion early action</h3><p className="mt-3 leading-7 text-[#062d3a]/65">Every step helps make screening, support, and care more visible in our communities.</p></div></div></section>
 
@@ -66,7 +66,7 @@ const CancerWalk = () => {
               <div className="rounded-xl bg-[#f4b942]/15 p-4"><p className="text-xs font-bold uppercase tracking-wider text-[#f4b942]">5 km + 9 km</p><p className="mt-1 text-sm text-white/70">Water, electrolytes and encouragement</p></div>
               <div className="rounded-xl bg-[#f26b5e]/15 p-4"><p className="text-xs font-bold uppercase tracking-wider text-[#f26b5e]">7 km</p><p className="mt-1 text-sm text-white/70">Ikeja turnaround</p></div>
             </div>
-            <div className="mt-8 flex items-center justify-between border-t border-white/10 pt-6 text-xs font-bold uppercase tracking-[0.18em] text-white/45"><span>Start: Yaba</span><Route className="h-5 w-5 text-[#a7df4c]" /><span>Finish: Yaba</span></div>
+            <div className="mt-8 flex flex-wrap items-center justify-between gap-4 border-t border-white/10 pt-6 text-xs font-bold uppercase tracking-[0.18em] text-white/45"><span>Start: Teslim Balogun Stadium</span><Route className="h-5 w-5 text-[#a7df4c]" /><span>Finish: Unilag Sports Facility</span></div>
           </div>
         </div>
       </section>
