@@ -1,5 +1,6 @@
-import { useState } from "react";
+import { useCallback, useEffect, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
+import { supabase } from "@/integrations/supabase/client";
 import { Calendar, MapPin, Clock, ArrowRight, Users, Building2, Heart, X, ChevronLeft, ChevronRight } from "lucide-react";
 import { Link } from "react-router-dom";
 import SomiHeader from "@/components/SomiHeader";
@@ -12,22 +13,19 @@ const fadeUp = {
   transition: { duration: 0.5 },
 };
 
-const upcomingEvents = [
-  {
-    date: "Saturday, April 18, 2026",
-    time: "9:00 AM – 2:00 PM",
-    location: "Ikeja City Secretariat, Lagos State",
-    description: "Free PSA blood tests, one-on-one medical consultations, and educational workshops.",
-    preRegisterOpen: true,
-  },
-  {
-    date: "Saturday, May 2, 2026",
-    time: "10:00 AM – 3:00 PM",
-    location: "Mapo Hall, Ibadan, Oyo State",
-    description: "Free PSA blood tests and private counseling sessions.",
-    preRegisterOpen: true,
-  },
-];
+type PublicEvent = {
+  id: string;
+  title: string;
+  date: string;
+  time: string | null;
+  location: string;
+  description: string | null;
+  is_upcoming: boolean;
+  pre_register_open: boolean;
+  stat: string | null;
+  cover_image_url: string | null;
+  gallery_urls: string[] | null;
+};
 
 import somiEvent1 from "@/assets/somi-event-1.jpg";
 import somiEvent2 from "@/assets/somi-event-2.jpg";
@@ -65,7 +63,32 @@ const pastEvents = [
 ];
 
 const Events = () => {
+  const [events, setEvents] = useState<PublicEvent[]>([]);
+  const [eventsLoading, setEventsLoading] = useState(true);
   const [lightbox, setLightbox] = useState<{ eventIdx: number; photoIdx: number } | null>(null);
+
+  const fetchEvents = useCallback(async () => {
+    const { data, error } = await supabase
+      .from("events")
+      .select("*")
+      .order("display_order", { ascending: true });
+
+    if (!error) setEvents((data as PublicEvent[]) || []);
+    setEventsLoading(false);
+  }, []);
+
+  useEffect(() => {
+    fetchEvents();
+  }, [fetchEvents]);
+
+  const upcomingEvents = events.filter((event) => event.is_upcoming);
+  const pastEvents = events.filter((event) => !event.is_upcoming).map((event) => ({
+    image: event.cover_image_url,
+    caption: event.title,
+    stat: event.stat || "Community screening completed",
+    location: event.location,
+    gallery: [event.cover_image_url, ...(event.gallery_urls || [])].filter(Boolean) as string[],
+  }));
 
   const openLightbox = (eventIdx: number) => setLightbox({ eventIdx, photoIdx: 0 });
   const closeLightbox = () => setLightbox(null);
@@ -124,7 +147,11 @@ const Events = () => {
           </motion.p>
 
           <div className="max-w-4xl mx-auto space-y-6">
-            {upcomingEvents.length === 0 ? (
+            {eventsLoading ? (
+              <motion.div {...fadeUp} className="text-center py-16 bg-muted/30 rounded-2xl border border-border">
+                <p className="text-muted-foreground text-lg font-medium">Loading upcoming events…</p>
+              </motion.div>
+            ) : upcomingEvents.length === 0 ? (
               <motion.div {...fadeUp} className="text-center py-16 bg-muted/30 rounded-2xl border border-border">
                 <Calendar className="w-12 h-12 text-muted-foreground/40 mx-auto mb-4" />
                 <p className="text-muted-foreground text-lg font-medium">New events coming soon.</p>
@@ -170,10 +197,11 @@ const Events = () => {
 
                         <div className="flex flex-wrap gap-3">
                           <a
-                            href="#"
-                            className="inline-flex items-center gap-2 bg-primary text-primary-foreground font-semibold text-sm py-2.5 px-6 rounded-full hover:opacity-90 transition-opacity"
+                            href={event.pre_register_open ? "#registration" : undefined}
+                            aria-disabled={!event.pre_register_open}
+                            className="inline-flex items-center gap-2 bg-primary text-primary-foreground font-semibold text-sm py-2.5 px-6 rounded-full hover:opacity-90 transition-opacity aria-disabled:cursor-not-allowed aria-disabled:opacity-50"
                           >
-                            Pre-Register for Free
+                            {event.pre_register_open ? "Pre-Register for Free" : "Registration opening soon"}
                             <ArrowRight className="w-3.5 h-3.5" />
                           </a>
                           <a
