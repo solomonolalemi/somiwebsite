@@ -19,16 +19,18 @@
 }
 
 @keyframes cancer-walk-marquee {
-  from {
+  0%,
+  29.4% {
     transform: translateX(0);
   }
-  to {
+  70.6%,
+  100% {
     transform: translateX(-50%);
   }
 }
 
 .cancer-walk-marquee {
-  animation: cancer-walk-marquee 28s linear infinite;
+  animation: cancer-walk-marquee 34s linear infinite;
 }
 
 .cancer-walk-marquee:hover {
