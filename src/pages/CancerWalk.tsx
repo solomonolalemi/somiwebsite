@@ -1,3 +1,4 @@
+import { useEffect, useState } from "react";
 import { ArrowDownRight, ArrowRight, CalendarDays, Check, Clock3, Heart, MapPin, Route, ShieldCheck, Users } from "lucide-react";
 import { Link } from "react-router-dom";
 
@@ -8,6 +9,48 @@ const routeStops = [
   { name: "Unilag Main Gate", km: "2 km", label: "Water + encouragement", color: "bg-[#50c4df]" },
   { name: "Unilag Sports Facility", km: "5 km", label: "Finish line + celebration", color: "bg-[#f4b942]" },
 ];
+
+const eventDate = new Date("2026-11-21T07:00:00+01:00").getTime();
+
+const getTimeLeft = () => {
+  const distance = Math.max(0, eventDate - Date.now());
+  return {
+    days: Math.floor(distance / 86400000),
+    hours: Math.floor((distance / 3600000) % 24),
+    minutes: Math.floor((distance / 60000) % 60),
+    seconds: Math.floor((distance / 1000) % 60),
+  };
+};
+
+const Countdown = () => {
+  const [timeLeft, setTimeLeft] = useState(getTimeLeft);
+
+  useEffect(() => {
+    const timer = window.setInterval(() => setTimeLeft(getTimeLeft()), 1000);
+    return () => window.clearInterval(timer);
+  }, []);
+
+  const units = [
+    { label: "Days", value: timeLeft.days },
+    { label: "Hours", value: timeLeft.hours },
+    { label: "Minutes", value: timeLeft.minutes },
+    { label: "Seconds", value: timeLeft.seconds },
+  ];
+
+  return (
+    <div aria-label="Countdown to Cancer Walk 2026" className="mt-10 w-full max-w-xl rounded-[1.75rem] border border-white/20 bg-[#062d3a]/60 p-4 shadow-2xl backdrop-blur-md sm:p-5">
+      <div className="mb-3 flex items-center justify-between text-[10px] font-black uppercase tracking-[0.24em] text-white/55"><span>Counting down to walk day</span><span className="text-[#a7df4c]">21.11.26 · 7AM</span></div>
+      <div className="grid grid-cols-4 gap-2 sm:gap-3">
+        {units.map((unit) => (
+          <div key={unit.label} className="rounded-2xl bg-white/10 px-2 py-3 text-center sm:px-4 sm:py-4">
+            <div className="text-2xl font-black tabular-nums text-white sm:text-4xl">{String(unit.value).padStart(2, "0")}</div>
+            <div className="mt-1 text-[9px] font-bold uppercase tracking-[0.18em] text-[#a7df4c] sm:text-[10px]">{unit.label}</div>
+          </div>
+        ))}
+      </div>
+    </div>
+  );
+};
 
 const CancerWalk = () => {
   return (
@@ -27,6 +70,7 @@ const CancerWalk = () => {
           <h1 className="max-w-4xl text-6xl font-black leading-[0.9] tracking-[-0.06em] sm:text-7xl lg:text-[9rem]">Walk For<br /><span className="text-[#a7df4c]">Life.</span></h1>
           <p className="mt-8 max-w-xl text-lg leading-7 text-white/80 sm:text-xl">One step can start a conversation. Join SOMI as we walk to promote cancer awareness, early screening, and healthier communities.</p>
           <div className="mt-10 flex flex-wrap gap-4"><a href={registrationFormUrl} target="_blank" rel="noreferrer" className="inline-flex items-center gap-3 rounded-full bg-[#a7df4c] px-7 py-4 font-bold text-[#062d3a] transition-transform hover:scale-105">Register to walk <ArrowRight className="h-5 w-5" /></a><a href="#route" className="inline-flex items-center gap-3 rounded-full border border-white/40 px-7 py-4 font-bold text-white hover:bg-white/10">See the route <ArrowDownRight className="h-5 w-5" /></a></div>
+          <Countdown />
         </div>
       </section>
 
