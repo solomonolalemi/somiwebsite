@@ -4,10 +4,11 @@ import { Link } from "react-router-dom";
 
 const registrationFormUrl = "https://docs.google.com/forms/d/e/1FAIpQLScPFBUlANGtbpflULxzVYOe4LItiPmdEHDjXKIrYnRY8tuZTg/viewform";
 
-const routeStops = [
-  { name: "Teslim Balogun Stadium", km: "0 km", label: "Convergence point", color: "bg-[#a7df4c]" },
-  { name: "Unilag Main Gate", km: "2 km", label: "Water + encouragement", color: "bg-[#50c4df]" },
-  { name: "Unilag Sports Facility", km: "5 km", label: "Finish line + celebration", color: "bg-[#f4b942]" },
+const routeSegments = [
+  { id: "A", from: "National Stadium exit", to: "Shitta Roundabout", road: "Alhaji Masha Road, in front of Teslim Balogun Stadium", direction: "Proceed to Shitta Roundabout" },
+  { id: "B", from: "Shitta Roundabout", to: "End of Aderiran Ogunsanya Street", road: "Aderiran Ogunsanya Street", direction: "Left turn at Shitta Roundabout" },
+  { id: "C", from: "Aderiran Ogunsanya Street", to: "Funsho Williams Avenue", road: "Bode Thomas Street", direction: "Left turn at the end of Aderiran Ogunsanya" },
+  { id: "D", from: "Bode Thomas Street", to: "National Stadium", road: "Funsho Williams Avenue", direction: "Straight on, into the stadium" },
 ];
 
 const eventDate = new Date("2026-11-21T07:00:00+01:00").getTime();
@@ -74,7 +75,7 @@ const CancerWalk = () => {
         </div>
       </section>
 
-      <section className="border-b border-[#062d3a]/10 bg-[#a7df4c] px-5 py-5 text-[#062d3a] lg:px-10"><div className="mx-auto flex max-w-7xl flex-wrap items-center gap-x-10 gap-y-4 text-sm font-bold uppercase tracking-wider"><span className="flex items-center gap-2"><CalendarDays className="h-5 w-5" /> Saturday, 21 November 2026</span><span className="flex items-center gap-2"><Clock3 className="h-5 w-5" /> 7:00 AM prompt</span><span className="flex items-center gap-2"><MapPin className="h-5 w-5" /> Convergence: Teslim Balogun Stadium</span></div></section>
+      <section className="border-b border-[#062d3a]/10 bg-[#a7df4c] px-5 py-5 text-[#062d3a] lg:px-10"><div className="mx-auto flex max-w-7xl flex-wrap items-center gap-x-10 gap-y-4 text-sm font-bold uppercase tracking-wider"><span className="flex items-center gap-2"><CalendarDays className="h-5 w-5" /> Saturday, 21 November 2026</span><span className="flex items-center gap-2"><Clock3 className="h-5 w-5" /> 7:00 AM prompt</span><span className="flex items-center gap-2"><MapPin className="h-5 w-5" /> Start & finish: National Stadium Surulere (Main Bowl)</span></div></section>
 
       <section className="mx-auto grid max-w-7xl gap-12 px-5 py-24 lg:grid-cols-[0.8fr_1.2fr] lg:px-10 lg:py-32"><div><p className="text-sm font-bold uppercase tracking-[0.25em] text-[#8bbd35]">Why we walk</p><h2 className="mt-4 max-w-md text-5xl font-black leading-none tracking-[-0.05em] sm:text-6xl">Awareness moves us forward.</h2></div><div className="grid gap-8 sm:grid-cols-2"><div className="border-t-2 border-[#a7df4c] pt-5"><h3 className="text-xl font-black">Start the conversation</h3><p className="mt-3 leading-7 text-[#062d3a]/65">Prostate cancer is easier to face when men and families have the right information early.</p></div><div className="border-t-2 border-[#a7df4c] pt-5"><h3 className="text-xl font-black">Champion early action</h3><p className="mt-3 leading-7 text-[#062d3a]/65">Every step helps make screening, support, and care more visible in our communities.</p></div></div></section>
 
@@ -86,28 +87,41 @@ const CancerWalk = () => {
             <div><p className="text-sm font-bold uppercase tracking-[0.25em] text-[#a7df4c]">The route</p><h2 className="mt-4 max-w-2xl text-5xl font-black tracking-[-0.05em] sm:text-7xl">Every stop makes<br /><span className="text-[#a7df4c]">a difference.</span></h2></div>
             <p className="max-w-sm text-white/65">A community route through Lagos designed to bring cancer awareness to more people, one neighbourhood at a time.</p>
           </div>
-          <div className="relative mt-16 overflow-hidden rounded-[2rem] border border-white/15 bg-gradient-to-br from-[#1a4550] via-[#103d48] to-[#0a5362] p-6 shadow-2xl shadow-black/25 sm:p-10 lg:p-12">
+          <div className="relative mt-16 overflow-hidden rounded-[2rem] border border-white/15 bg-gradient-to-br from-[#1a4550] via-[#103d48] to-[#0a5362] p-5 shadow-2xl shadow-black/25 sm:p-8 lg:p-10">
             <div className="absolute -right-24 -top-24 h-80 w-80 rounded-full border border-[#a7df4c]/15" />
             <div className="absolute -bottom-32 left-1/3 h-72 w-72 rounded-full bg-[#50c4df]/15 blur-3xl" />
             <div className="relative flex flex-col justify-between gap-6 border-b border-white/15 pb-7 lg:flex-row lg:items-center">
-              <div><p className="text-xs font-bold uppercase tracking-[0.3em] text-[#a7df4c]">5 km community route</p><p className="mt-3 text-lg text-white/65">Follow the colour-coded checkpoints across Lagos.</p></div>
-              <div className="flex w-fit items-center gap-3 rounded-full bg-[#f4b942]/15 px-5 py-3 text-xs font-bold uppercase tracking-wider text-white"><span className="h-3 w-3 rounded-full bg-[#f4b942] shadow-[0_0_14px_#f4b942]" /> Water + encouragement at 2 km, 4 km &amp; finish</div>
+              <div><p className="text-xs font-bold uppercase tracking-[0.3em] text-[#a7df4c]">5 km clockwise loop</p><p className="mt-3 text-lg text-white/70">Start and finish at the same venue. Walkers keep to the kerbside lanes while traffic continues on the remaining lanes.</p></div>
+              <div className="flex w-fit shrink-0 items-center gap-3 rounded-full bg-[#a7df4c]/15 px-5 py-3 text-xs font-bold uppercase tracking-wider text-white"><span className="h-3 w-3 rounded-full bg-[#a7df4c]" /> National Stadium · Main Bowl</div>
             </div>
-            <div className="relative mt-12 grid gap-8 md:grid-cols-3 md:gap-0">
-              <div className="absolute left-[10%] right-[10%] top-9 hidden border-t-2 border-dashed border-white/45 md:block" />
-              {routeStops.map((stop, index) => (
-                <div key={`${stop.name}-${index}`} className="relative z-10 flex items-start gap-5 md:block md:px-6 md:text-center">
-                  <div className={`relative mx-0 flex h-[4.5rem] w-[4.5rem] shrink-0 items-center justify-center rounded-full border-[5px] border-[#103d48] ${stop.color} text-[#062d3a] shadow-[0_0_0_3px_rgba(255,255,255,0.45),0_8px_25px_rgba(0,0,0,0.18)] md:mx-auto`}><MapPin className="h-8 w-8" /></div>
-                  <div className="pt-1 md:pt-6"><span className="text-sm font-black uppercase tracking-[0.25em] text-white/50">{stop.km}</span><p className="mt-2 text-xl font-black leading-tight lg:text-2xl">{stop.name}</p><p className="mt-3 text-[11px] font-bold uppercase leading-4 tracking-[0.14em] text-[#a7df4c]">{stop.label}</p></div>
-                </div>
+
+            <figure className="relative mt-8 overflow-hidden rounded-2xl bg-[#eef7f1] p-2 sm:p-4">
+              <img
+                src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Screenshot%202026-11-12%20at%208.03.26%E2%80%AFPM-gsicHoNeJ7zUONFkaQikEWPAt5Frke.png"
+                alt="Schematic of the five kilometre clockwise walk loop. It starts and finishes at National Stadium Surulere Main Bowl, follows Alhaji Masha Road to Shitta Roundabout, Aderiran Ogunsanya Street, Bode Thomas Street, and Funsho Williams Avenue back into the stadium. Traffic control points and first-aid locations are marked along the route."
+                className="mx-auto h-auto w-full rounded-xl object-contain"
+                loading="lazy"
+              />
+              <figcaption className="px-2 py-3 text-sm leading-6 text-[#062d3a]/70">Proposed 5 km route. Schematic only, not to scale; traffic control points and ambulance/first-aid points are shown on the map.</figcaption>
+            </figure>
+
+            <div className="relative mt-8 grid gap-4 sm:grid-cols-2 xl:grid-cols-4">
+              {routeSegments.map((segment) => (
+                <article key={segment.id} className="rounded-2xl border border-white/10 bg-white/[0.06] p-5">
+                  <div className="flex items-center justify-between"><span className="flex h-9 w-9 items-center justify-center rounded-full bg-[#a7df4c] text-sm font-black text-[#062d3a]">{segment.id}</span><span className="text-[10px] font-bold uppercase tracking-[0.2em] text-white/45">Segment {segment.id}</span></div>
+                  <h3 className="mt-4 text-base font-black leading-snug">{segment.from} <span className="text-[#a7df4c]">to</span> {segment.to}</h3>
+                  <p className="mt-3 text-xs font-bold uppercase tracking-wider text-[#50c4df]">{segment.road}</p>
+                  <p className="mt-3 text-sm leading-6 text-white/65">{segment.direction}</p>
+                </article>
               ))}
             </div>
-            <div className="relative mt-14 grid gap-4 md:grid-cols-3">
-              <div className="rounded-2xl border border-[#50c4df]/30 bg-[#50c4df]/15 p-5"><p className="text-xs font-black uppercase tracking-[0.2em] text-[#50c4df]">2 km checkpoint</p><p className="mt-2 text-sm leading-6 text-white/75">Unilag Main Gate — water and encouragement to keep you moving.</p></div>
-              <div className="rounded-2xl border border-[#f26b5e]/30 bg-[#f26b5e]/15 p-5"><p className="text-xs font-black uppercase tracking-[0.2em] text-[#ff8a7d]">4 km checkpoint</p><p className="mt-2 text-sm leading-6 text-white/75">A second encouragement station before the final stretch.</p></div>
-              <div className="rounded-2xl border border-[#f4b942]/30 bg-[#f4b942]/15 p-5"><p className="text-xs font-black uppercase tracking-[0.2em] text-[#f4b942]">5 km finish</p><p className="mt-2 text-sm leading-6 text-white/75">Celebrate at Unilag Sports Facility with water and encouragement.</p></div>
+
+            <div className="relative mt-8 grid gap-3 sm:grid-cols-3">
+              <div className="rounded-xl border border-[#a7df4c]/25 bg-[#a7df4c]/10 p-4"><p className="text-xs font-bold uppercase tracking-wider text-[#a7df4c]">Start · TCP 1</p><p className="mt-1 text-sm text-white/75">National Stadium exit gate</p></div>
+              <div className="rounded-xl border border-[#50c4df]/25 bg-[#50c4df]/10 p-4"><p className="text-xs font-bold uppercase tracking-wider text-[#50c4df]">Traffic control points</p><p className="mt-1 text-sm text-white/75">TCP 2: Shitta Roundabout · TCP 3: Aderiran Ogunsanya / Bode Thomas · TCP 4: Bode Thomas / Funsho Williams</p></div>
+              <div className="rounded-xl border border-[#f4b942]/25 bg-[#f4b942]/10 p-4"><p className="text-xs font-bold uppercase tracking-wider text-[#f4b942]">Finish · TCP 5</p><p className="mt-1 text-sm text-white/75">Return gate into National Stadium Main Bowl</p></div>
             </div>
-            <div className="relative mt-10 flex flex-col gap-4 border-t border-white/15 pt-7 text-xs font-bold uppercase tracking-[0.18em] text-white/50 sm:flex-row sm:items-center sm:justify-between"><span>Start: Teslim Balogun Stadium</span><Route className="hidden h-5 w-5 text-[#a7df4c] sm:block" /><span>Finish: Unilag Sports Facility</span></div>
+            <div className="relative mt-8 flex flex-col gap-4 border-t border-white/15 pt-7 text-xs font-bold uppercase tracking-[0.15em] text-white/55 sm:flex-row sm:items-center sm:justify-between"><span>Start: National Stadium Surulere (Main Bowl)</span><Route className="hidden h-5 w-5 text-[#a7df4c] sm:block" /><span>Finish: National Stadium Surulere (Main Bowl)</span></div>
           </div>
         </div>
       </section>
