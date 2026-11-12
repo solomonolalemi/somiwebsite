@@ -97,7 +97,7 @@ const CancerWalk = () => {
 
             <figure className="relative mt-8 overflow-hidden rounded-2xl bg-[#eef7f1] p-2 sm:p-4">
               <img
-                src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Screenshot%202026-11-12%20at%208.03.26%E2%80%AFPM-gsicHoNeJ7zUONFkaQikEWPAt5Frke.png"
+                src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Screenshot%202026-11-12%20at%208.21.03%E2%80%AFPM-HG3IkVjpo8DttUyD5uwu3k33QRjAOL.png"
                 alt="Schematic of the five kilometre clockwise walk loop. It starts and finishes at National Stadium Surulere Main Bowl, follows Alhaji Masha Road to Shitta Roundabout, Aderiran Ogunsanya Street, Bode Thomas Street, and Funsho Williams Avenue back into the stadium. Traffic control points and first-aid locations are marked along the route."
                 className="mx-auto h-auto w-full rounded-xl object-contain"
                 loading="lazy"
